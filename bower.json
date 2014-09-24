@@ -1,0 +1,13 @@
+{
+  "name": "Twnsnd",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "~1.10.2",
+    "modernizr": "*",
+    "normalize.scss": "*",
+    "typeplate-starter-kit": "*",
+    "bower-neat": "*",
+    "bower-bourbon": "*",
+    "bootstrap-sass": "3.0.2"
+  }
+}
