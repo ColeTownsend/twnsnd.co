@@ -1,0 +1,74 @@
+name: "Twnsnd Co."
+description: "Insouciant. Co-founder of Meeet, designer of TheNews App, curator of New Old Stock"
+author: "Twnsnd Co"
+url: "http://coletownsend.github.io/twnsnd.co/"
+email: cole@twnsnd.co
+twitter: twnsndco
+version: 41
+
+future: true
+
+# images
+images_url: /images/inline/
+image:
+  source: images/inline
+
+# dribbble
+dribbble_set:
+  user:            'coletownsend'
+  shots_per_page:  9
+  page:            1
+  gallery_tag:     'ul'
+  gallery_class:   'dribbble-grid'
+  is_list:         true
+  a_target:        '_blank'
+  full_size:       false
+
+
+
+# A list of directories (including trailing slash) and files to exclude from the conversion
+# ============================================================
+exclude: ['README.md', 'node_modules', 'Procfile', 'Rakefile', '*.codekit', 'Gemfile.lock', 'Gemfile', '.gitignore', 'templates', '*.sublime-workspace', '*.sublime-project', '_config.yml', '*.scssc']
+include:  ['.htaccess']
+
+timezone:    America/New_York
+future:      true
+highlighter:    true
+markdown: rdiscount
+rdiscount:
+  extensions:
+    - smart
+    - generate_toc
+    - footnotes
+
+
+# Links to include in top navigation
+# For external links add external: true
+# ============================================================
+links:
+  - title: Home
+    url: /
+  - title: Work
+    url: /work/
+  - title: Journal
+    url: /journal/
+  - title: About
+    url: /about/
+
+permalink: /:categories/:title
+
+paginate: 6
+
+sitemap:
+    file: "/sitemap.xml"
+    exclude:
+        - "/atom.xml"
+        - "/feed.xml"
+        - "/feed/index.xml"
+    include_posts:
+        - "/index.html"
+    change_frequency_name: "change_frequency"
+    priority_name: "priority"
+
+source: public
+destination: dist
