@@ -3,6 +3,8 @@ var browserSync = require('browser-sync');
 var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
+var deploy = require("gulp-gh-pages");
+
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -30,7 +32,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
     browserSync({
         server: {
-            baseDir: '_site'
+            baseDir: 'dist'
         }
     });
 });
@@ -39,13 +41,13 @@ gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
 gulp.task('sass', function () {
-    return gulp.src('_scss/main.scss')
+    return gulp.src('public/_scss/i.scss')
         .pipe(sass({
             includePaths: ['scss'],
             onError: browserSync.notify
         }))
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-        .pipe(gulp.dest('_site/css'))
+        .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.reload({stream:true}))
         .pipe(gulp.dest('css'));
 });
@@ -55,8 +57,14 @@ gulp.task('sass', function () {
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-    gulp.watch('_scss/*.scss', ['sass']);
-    gulp.watch(['index.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
+    gulp.watch('public/_scss/*.scss', ['sass']);
+    gulp.watch(['public/index.html', 'public/_data', 'public/_layouts/*.html', 'public/_posts/*'], ['jekyll-rebuild']);
+});
+
+
+gulp.task("deploy", ["jekyll-build"], function () {
+    return gulp.src("./public/**/*")
+        .pipe(deploy());
 });
 
 /**
