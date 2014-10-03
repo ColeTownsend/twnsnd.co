@@ -77,7 +77,7 @@ gulp.task('watch', function () {
 });
 
 
-gulp.task("deploy", ["jekyll-build", "minify-css"], function () {
+gulp.task("deploy", ["jekyll-build"], function () {
     return gulp.src(["./public/**/*","./_config.yml"])
         .pipe(deploy());
 });

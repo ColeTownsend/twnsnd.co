@@ -28,7 +28,7 @@ dribbble_set:
 
 # A list of directories (including trailing slash) and files to exclude from the conversion
 # ============================================================
-exclude: ['README.md', 'node_modules', 'Procfile', 'Rakefile', '*.codekit', 'Gemfile.lock', 'Gemfile', '.gitignore', 'templates', '*.sublime-workspace', '*.sublime-project', '_config.yml', '*.scssc']
+exclude: ['README.md', '_drafts', '_compontents', '_includes','_layouts', '_plugins', '_data', 'node_modules', 'Procfile', 'Rakefile', '*.codekit', 'Gemfile.lock', 'Gemfile', '.gitignore', 'templates', '*.sublime-workspace', '*.sublime-project', '_config.yml', '*.scssc']
 include:  ['.htaccess']
 
 timezone:    America/New_York
