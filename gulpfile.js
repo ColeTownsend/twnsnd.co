@@ -8,6 +8,11 @@ var cp          = require('child_process');
 var deploy      = require("gulp-gh-pages");
 var minifyCSS   = require('gulp-minify-css');
 
+// images
+// var imagemin = require('gulp-imagemin');
+// var changed = require('gulp-changed');
+// var defaultSettings = require("./settings.json");
+
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -23,16 +28,25 @@ gulp.task('jekyll-build', function (done) {
 });
 
 /**
+ * Test the Jekyll Site
+ */
+gulp.task('jekyll-dev', function (done) {
+  browserSync.notify(messages.jekyllBuild);
+  return cp.spawn('jekyll', ['build', '--config=_config.yml,_dev-config.yml'], {stdio: 'inherit'})
+    .on('close', done);
+});
+
+/**
  * Rebuild Jekyll & do page reload
  */
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+gulp.task('jekyll-rebuild', ['jekyll-dev'], function () {
     browserSync.reload();
 });
 
 /**
- * Wait for jekyll-build, then launch the Server
+ * Wait for jekyll-dev, then launch the Server
  */
-gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
+gulp.task('browser-sync', ['sass', 'jekyll-dev'], function() {
     browserSync({
         server: {
             baseDir: 'dist'
@@ -65,6 +79,14 @@ gulp.task('minify-css', function() {
   gulp.src('dist/css/*.css')
     .pipe(minifyCSS({keepBreaks:true}))
     .pipe(gulp.dest('dist/css'));
+});
+
+// minify images
+gulp.task('images', function() {
+  return gulp.src(paths.imagesSrc + '/**/*')
+    .pipe(changed(paths.img))
+    .pipe(imagemin({optimizationLevel: 5}))
+    .pipe(gulp.dest(paths.img));
 });
 
 /**
