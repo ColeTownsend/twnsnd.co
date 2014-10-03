@@ -8,14 +8,10 @@ var cp          = require('child_process');
 var deploy      = require("gulp-gh-pages");
 var minifyCSS   = require('gulp-minify-css');
 
-
-var paths = {
-  scripts: ['public/assets/js/*.js'],
-  images: ['public/assets/img'],
-  imgDist: ['dist/assets/img'],
-  sass: ['public/assets/scss/**/*.scss'],
-  jekyll: ['_layouts/*.html', '_posts/*', '_sites']
-};
+// images
+// var imagemin = require('gulp-imagemin');
+// var changed = require('gulp-changed');
+// var defaultSettings = require("./settings.json");
 
 
 var messages = {
@@ -73,16 +69,24 @@ gulp.task('sass', function () {
             }))
         // .pipe(sourcemaps.write())
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-        .pipe(gulp.dest('dist/assets/css'))
+        .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.reload({stream:true}))
-        .pipe(gulp.dest('public/assets/css'));
+        .pipe(gulp.dest('public/css'));
 });
 
 // Minify css
 gulp.task('minify-css', function() {
-  gulp.src('dist/assets/css/*.css')
+  gulp.src('dist/css/*.css')
     .pipe(minifyCSS({keepBreaks:true}))
-    .pipe(gulp.dest('dist/assets/css'));
+    .pipe(gulp.dest('dist/css'));
+});
+
+// minify images
+gulp.task('images', function() {
+  return gulp.src(paths.imagesSrc + '/**/*')
+    .pipe(changed(paths.img))
+    .pipe(imagemin({optimizationLevel: 5}))
+    .pipe(gulp.dest(paths.img));
 });
 
 /**
