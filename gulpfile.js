@@ -1,9 +1,12 @@
 var gulp        = require('gulp');
 var browserSync = require('browser-sync');
-var sass        = require('gulp-sass');
+// var sass        = require('gulp-sass');
+var sass        = require('gulp-ruby-sass');
+// var sourcemaps = require('gulp-sourcemaps');
 var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
-var deploy = require("gulp-gh-pages");
+var deploy      = require("gulp-gh-pages");
+var minifyCSS   = require('gulp-minify-css');
 
 
 var messages = {
@@ -41,15 +44,27 @@ gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
 gulp.task('sass', function () {
-    return gulp.src('public/_scss/i.scss')
-        .pipe(sass({
-            includePaths: ['scss'],
-            onError: browserSync.notify
-        }))
+    return gulp.src('./public/assets/_scss/*.scss')
+        // .pipe(sourcemaps.init())
+            .pipe(sass({
+                loadPath: ['scss'],
+                // includePaths: ['scss'],
+                noCache: true,
+                style: "expanded",
+                onError: browserSync.notify
+            }))
+        // .pipe(sourcemaps.write())
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-        .pipe(gulp.dest('dist/css'))
+        .pipe(gulp.dest('./dist/assets/css'))
         .pipe(browserSync.reload({stream:true}))
         .pipe(gulp.dest('css'));
+});
+
+// Minify css
+gulp.task('minify-css', function() {
+  gulp.src('./dist/assets/css/*.css')
+    .pipe(minifyCSS({keepBreaks:true}))
+    .pipe(gulp.dest('./dist/assets/css'))
 });
 
 /**
@@ -57,13 +72,13 @@ gulp.task('sass', function () {
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-    gulp.watch('public/_scss/*.scss', ['sass']);
+    gulp.watch('./public/**/*.scss', ['sass']);
     gulp.watch(['public/index.html', 'public/_data', 'public/_layouts/*.html', 'public/_posts/*'], ['jekyll-rebuild']);
 });
 
 
-gulp.task("deploy", ["jekyll-build"], function () {
-    return gulp.src("./public/**/*")
+gulp.task("deploy", ["jekyll-build", "minify-css"], function () {
+    return gulp.src(["./public/**/*","./_config.yml"])
         .pipe(deploy());
 });
 

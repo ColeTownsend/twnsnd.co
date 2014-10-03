@@ -59,8 +59,20 @@ $(function () {
   _gs('GSN-487843-D');
 </script>
 
+<script>
+// Grid toggle
+function changeClass() {
+  if ( document.getElementById("baseline").className.match(/(?:^|\s)show-grid(?!\S)/) ) {
+    document.getElementById("baseline").className = document.getElementById("baseline").className.replace( /(?:^|\s)show-grid(?!\S)/g , '' )
+  } else { document.getElementById("baseline").className += " show-grid"; }
+}
+document.getElementById("gridtoggle").addEventListener( 'click' , changeClass );
+</script>
+
 <script src="{{ site.url }}/javascripts/instantclick.js" data-no-instant></script>
 
 <script data-no-instant>
   InstantClick.init(55);
 </script>
+
+

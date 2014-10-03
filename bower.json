@@ -9,5 +9,8 @@
     "bower-neat": "*",
     "bower-bourbon": "*",
     "bootstrap-sass": "3.0.2"
+  },
+  "devDependencies": {
+    "sass-list-maps": "~1.0.0"
   }
 }
