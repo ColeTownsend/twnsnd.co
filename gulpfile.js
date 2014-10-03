@@ -32,7 +32,7 @@ gulp.task('jekyll-build', function (done) {
  */
 gulp.task('jekyll-dev', function (done) {
   browserSync.notify(messages.jekyllBuild);
-  return cp.spawn('jekyll', ['build', '--config=_config.yml,_dev-config.yml'], {stdio: 'inherit'})
+  return cp.spawn('jekyll', ['build', '--config=_config.yml,_config.dev.yml'], {stdio: 'inherit'})
     .on('close', done);
 });
 
