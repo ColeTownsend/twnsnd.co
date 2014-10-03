@@ -1,0 +1,44 @@
+{
+  "name": "sass-list-maps",
+  "version": "1.0.0",
+  "homepage": "https://github.com/lunelson/sass-list-maps",
+  "authors": [
+    "Lu Nelson <lunelson@gmail.com>"
+  ],
+  "description": "Polyfill for map (hash/object) data functionality in libsass and ruby-sass < 3.3.x.",
+  "main": "_sass-list-maps.scss",
+  "keywords": [
+    "libsass",
+    "sass",
+    "map",
+    "maps",
+    "list",
+    "lists",
+    "data"
+  ],
+  "license": "MIT",
+  "ignore": [
+    ".*",
+    "**/.*",
+    "doc*",
+    "lib",
+    "test*",
+    "*.gem*",
+    "sache.json",
+    "node_modules",
+    "bower_components",
+    "sass-hash.jpg",
+    "sass-list-maps.todo",
+    "sass-list-maps.sublime-project"
+  ],
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.0",
+    "commit": "11a7efc1d77a6ed485438edf96f8745a48e2d63a"
+  },
+  "_source": "git://github.com/lunelson/sass-list-maps.git",
+  "_target": "~1.0.0",
+  "_originalSource": "sass-list-maps",
+  "_direct": true
+}

@@ -1,0 +1,47 @@
+{
+  "name": "sass-list-maps",
+  "version": "1.0.0-b",
+  "description": "Forward-compatible map (hash) functions for libsass and ruby-sass < 3.3",
+  "main": "_sass-list-maps.scss",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lunelson/sass-list-maps.git"
+  },
+  "keywords": [
+    "libsass",
+    "sass",
+    "map",
+    "maps",
+    "list",
+    "lists",
+    "data"
+  ],
+  "author": {
+    "name": "Lu Nelson"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lunelson/sass-list-maps/issues"
+  },
+  "homepage": "https://github.com/lunelson/sass-list-maps",
+  "_id": "sass-list-maps@1.0.0-b",
+  "_shasum": "ee856d28547ef5af181e0f7246051327540e4842",
+  "_from": "sass-list-maps@*",
+  "_npmVersion": "1.4.10",
+  "_npmUser": {
+    "name": "lunelson",
+    "email": "lunelson@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "lunelson",
+      "email": "lunelson@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "ee856d28547ef5af181e0f7246051327540e4842",
+    "tarball": "http://registry.npmjs.org/sass-list-maps/-/sass-list-maps-1.0.0-b.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/sass-list-maps/-/sass-list-maps-1.0.0-b.tgz"
+}

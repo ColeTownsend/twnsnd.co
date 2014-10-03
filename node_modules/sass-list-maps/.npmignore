@@ -1,0 +1,8 @@
+doc*
+test*
+lib*
+*.gem*
+*.sublime*
+*.todo
+*.jpg
+sache.json
