@@ -225,6 +225,7 @@ a {
   code, pre {
     background-color: $codeBackgroundColour;
     font-family: unquote(map-get($monospacetype, font-family));
+    color: white;
   }
 
   pre {
@@ -239,7 +240,6 @@ a {
 
   code {
     line-height: 1rem;
-
     @include fontsize(theta, all);
   }
 
