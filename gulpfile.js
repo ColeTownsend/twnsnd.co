@@ -44,27 +44,27 @@ gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
 gulp.task('sass', function () {
-    return gulp.src('./public/assets/_scss/*.scss')
+    return gulp.src('public/_scss/i.scss')
         // .pipe(sourcemaps.init())
             .pipe(sass({
                 loadPath: ['scss'],
                 // includePaths: ['scss'],
-                noCache: true,
-                style: "expanded",
+                // noCache: true,
+                style: "compressed",
                 onError: browserSync.notify
             }))
         // .pipe(sourcemaps.write())
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-        .pipe(gulp.dest('./dist/assets/css'))
+        .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.reload({stream:true}))
-        .pipe(gulp.dest('css'));
+        .pipe(gulp.dest('public/css'));
 });
 
 // Minify css
 gulp.task('minify-css', function() {
-  gulp.src('./dist/assets/css/*.css')
+  gulp.src('dist/css/*.css')
     .pipe(minifyCSS({keepBreaks:true}))
-    .pipe(gulp.dest('./dist/assets/css'))
+    .pipe(gulp.dest('dist/css'));
 });
 
 /**
