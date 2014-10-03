@@ -19,18 +19,18 @@ $custom-font-family: false; // Custom font-face stack, if set will be added to t
 // -------------------------------------//
 
 // Text Indentation Value
-$indent-val: 1.5em;
+$indent-val: 1.4em;
 
 // Paragraph Styling Boolean
 // 'false' means no vertical whitespace
 // between subsequent paragraphs.
-$paragraph-vertical-whitespace: false;
+$paragraph-vertical-whitespace: true;
 
 
 // $Small Print
 // -------------------------------------//
 
-$small-print-size: 65%;
+$small-print-size: 75%;
 
 
 // $Color
@@ -82,8 +82,8 @@ $type-scale-unit-value: rem;
 // $Pull-Quotes
 // -------------------------------------//
 
-$pull-quote-fontsize: 4em;
-$pull-quote-opacity: 0.5;
+$pull-quote-fontsize: 3em;
+$pull-quote-opacity: 0.8;
 $pull-quote-color: $blue-black;
 
 
@@ -106,7 +106,7 @@ $small-caps-weight: 600;
 // -------------------------------------//
 
 $dropcap-float-position: left;
-$dropcap-font-size: 4em;
+$dropcap-font-size: 3em;
 $dropcap-font-family: inherit;
 $dropcap-txt-indent: 0;
 $dropcap-margin: inherit;
