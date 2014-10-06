@@ -1,0 +1,33 @@
+{
+  "name": "grid",
+  "authors": [
+    "Ben Schwarz <ben@germanforblack.com>"
+  ],
+  "keywords": [
+    "css",
+    "grid",
+    "flexbox",
+    "am-css"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/components",
+    "test",
+    "tests"
+  ],
+  "homepage": "https://github.com/benschwarz/am-grid",
+  "version": "0.0.1",
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.1",
+    "commit": "2818a3e53d7603e18a5ea851c94558bc8bb46499"
+  },
+  "_source": "git://github.com/benschwarz/am-grid.git",
+  "_target": "~0.0.1",
+  "_originalSource": "am-grid",
+  "_direct": true
+}

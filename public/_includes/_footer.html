@@ -1,7 +1,23 @@
 <footer>
-  {% include _js_includes.html %}
-  <small>
-    <a href="#top">To Top</a> <br>
-    <img class="buffalo-icon" src="/images/assets/buffalo-blue.svg"> Made in Buffalo <br> © 2014 Cole Townsend
-  </small>
+  <article am-Grid-Row="gutters between">
+    <div am-grid-col="3">
+      <p am-text="opacity:25">
+        Great designers tend to be a great humans. They can empathize and can apply perspectives other than their own. They can accept criticism, be told that they are wrong, and stand up for what they think is right.
+      </p>
+    </div>
+    <div am->
+      <a am-Link="underline" href="#top">Back To Top</a> <br>
+      <span am-text="opacity:25"><br> © 2014 Cole Townsend</span>
+      </small>
+    </div>
+    <div am-grid-col="3">
+      <p am-text="opacity:25">
+        Set in {{ site.font }}.
+        Built with Jekyll, SCSS, and HTML.
+        Served via Github Pages.
+      </p>
+    </div>
+  </article>
 </footer>
+
+{% include _js_includes.html %}

@@ -1,11 +1,7 @@
-// global stuff
-// @import "_normalize";
-// @import "_instantclick";
-
 // bourbon + neat
-// @import "./_components/bower-bourbon/_bourbon.scss";
+// @import "../_components/bower-bourbon/_bourbon.scss";
 // @import "_grid-settings";
-// @import "./_components/bower-neat/_neat.scss";
+// @import "../_components/bower-neat/_neat.scss";
 
 
 // sassline
@@ -32,3 +28,6 @@
   background-repeat: repeat-y;
   background-size: 100% 1rem;
 }
+
+// global stuff
+@import "_instantclick";
