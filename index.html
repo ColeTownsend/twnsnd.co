@@ -1,250 +1,274 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sassline</title>
-  <link rel="stylesheet" href="/twnsnd.co/css/i.css">
-  <link rel="shortcut icon" href="/twnsnd.co/img/favicon.ico">
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title> Twnsnd Co. </title>
+  <meta name="author" content="Twnsnd Co">
+  <meta name="description" content="Insouciant. Co-founder of Meeet, designer of TheNews App, curator of New Old Stock">
+  <link type="application/atom+xml" rel="self" href="/sitemap.xml"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+
+	<link data-no-instant rel="stylesheet" href="/css/i.css?v=41">
   <script src="/twnsnd.co/js/responsive-nav.min.js"></script>
-  <script>
-  // Example of how to load in a smaller Typekit kit at smaller viewport widths. Every little helps.
-  var kit;
-  if( window.innerWidth < 800 ) {
-    // Smaller kit - default characters (swap in your kit code)
-    kit='xxx1xxx';
-  } else {
-    // Larger kit - all characters enabled (swap in your kit code)
-    kit='xxx2xxx';
-  };
-  document.write('\x3Cscript src="//use.typekit.net/'+kit+'.js">\x3C/script>');
+  
+
+  <!-- FOUT B Gone -->
+   <script src="/javascripts/foutbgone.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    fbg.hideFOUT('asap', 400);
   </script>
-  <script>try{Typekit.load();}catch(e){}</script>
+
+  <!-- Favicons and Touch Device Icons -->
+  <link rel="shortcut icon" href="/images/assets/favicon.ico?v=41">
+  <link data-no-instant rel="apple-touch-icon" href="/assets/favicon-128x128.png?v=41">
+  <link data-no-instant rel="apple-touch-icon" sizes="72x72"   href="/images/assets/favicon-76x76.png?v=41">
+  <link data-no-instant rel="apple-touch-icon" sizes="114x114" href="/images/assets/favicon-128x128.png?v=41">
+  <link data-no-instant rel="apple-touch-icon" sizes="144x144" href="/images/assets/favicon-256x256.png?v=41">
 </head>
 
-<body>
+  <body class="home site">
+    <!-- <header id="top" class="global-header">
+  <hgroup role="site-name">
+    <a href="">Twnsnd Co.</a>
+  </hgroup>
+  <nav class="nav-collapse">
+    <ul class="main-nav__list"
+      <li><span id="gridtoggle">Toggle Grid</span></li>
+      
+      <li><a href="/work/" >Work</a></li>
+      
+      <li><a href="/journal/" >Journal</a></li>
+      
+      <li><a href="/about/" >About</a></li>
+      
+    </ul>
+  </nav>
+</header>
+ -->
 
-  <header class="global-header">
-    <h1 class="global-header__logo"><a href="http://sassline.com">Sassline</a></h1>
-    <nav class="main-nav">
-      <ul class="main-nav__list">
-        <li><span id="gridtoggle">Toggle Grid</span></li
-       ><li><a href="https://github.com/designbyjake/sassline">Github</a></li>
-      </ul>
-    </nav>
-  </header>
+<header id="top" role="main-header" am-Grid-Row="middle between">
+  <hgroup am-grid-col><a href="">Twnsnd Co.</a></hgroup>
+  <nav am-grid-col>
+    <ul>
+      
+        <li><a href="/work/" >Work</a></li>
+      
+        <li><a href="/journal/" >Journal</a></li>
+      
+        <li><a href="/about/" >About</a></li>
+      
+    </ul>
+  </nav>
+</header>
+    <main class="site-content">
+      <section am-Block="1" class="typeset">
+        <article am-Grid-Row="middle">
+          <h2 am-Grid-Col="12 middle" am-Text="hero">
+            Cole Townsend is a designer who wants to work with you.
+            <br>
+            He has a passion for clean and intuitive solutions.
+            <br>
+            
+            He is unavailable, but please take a look anyway.</a>
+            
+          </h2>
+        </article>
+      </section>
+      <!-- Portfolio section, sprinkled with blog posts -->
+      
+      <section id="work" am-Block="2" class="typeset">
+        <article am-Grid-Row>
+          <ul>
+           <!-- end for post loop -->
+          </ul>
+        </article>
+      </section>
+      
+      <!-- Side projects -->
+      <section id="projects" am-Block="3" class="typeset colorways">
+        <article am-Grid-Row="">
+          <h2 am-Grid-Col="11 offset:1">Currently Working On&#58;</h2>
+          <div am-block="project" am-Grid-Col="11 offset:1">
+          <!-- Project Loop -->
+          
+            <h3 class="toggle-expand nos">New Old Stock</h3>
+            <p am-text="excerpt" class="hidden-info">
+              Vintage photos from the public archives, free of known copyright restrictions. I do this in my spare time.
 
-  <section id="baseline">
-    <div class="section typeset">
-      <div class="single">
-        <h1>Lorem ipsum dolor sit&nbsp;amet</h1>
+              <br>
+              <a am-z="top" href="http://nos.twnsnd.co">Link</a>
+            </p>
+          
+            <h3 class="toggle-expand meeet">Meeet Co</h3>
+            <p am-text="excerpt" class="hidden-info">
+              Meeet is the place to find a collaborator to help you ship that side project left by the wayside. We're here to help you find the best person to help you ship your project and discover your next one. Your portfolio will be stronger in no time.
 
-        <p class="caption">Labore reprehenderit corporis ullam distinctio&nbsp;ex.</p>
+              <br>
+              <a am-z="top" href="http://meeet.co">Link</a>
+            </p>
+          
+            <h3 class="toggle-expand thenews">TheNews</h3>
+            <p am-text="excerpt" class="hidden-info">
+              TheNews integrates the two best discussion sites on the web. Swipe between sources quickly to stay on top of the latest news.
 
-        <p>Consectetur adipisicing elit, alias at autem magna aliquid <a href="#">quam proident</a> quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia&nbsp;sint.</p>
+              <br>
+              <a am-z="top" href="http://thenewsapp.co/">Link</a>
+            </p>
+          
+            <h3 class="toggle-expand williams">Bachelors Degree</h3>
+            <p am-text="excerpt" class="hidden-info">
+              I'm a current senior and Art History Major at Williams College. I also run for the cross country and track teams, organize Purple Valley Coffee club, and co-chair Men for Consent.
 
-        <p>Quos atque officia quod. <i>Suscipit delectus</i> cupidatat, quia nulla numquam aute cillum proident. Maiores iusto culpa molestias quam id tenetur saepe impedit reiciendis itaque ducimus itaque nostrud. Tempor aliquip, culpa earum itaque sed consequatur minus aliquip reprehenderit nihil veniam tempora do maxime omnis reiciendis elit&nbsp;tempora.</p>
+              <br>
+              <a am-z="top" href="http://williams.edu">Link</a>
+            </p>
+          
+            <h3 class="toggle-expand pvcc">Purple Valley Coffee Club</h3>
+            <p am-text="excerpt" class="hidden-info">
+              This group will expose students, both familiar and unfamiliar to coffee and brewing, to new methods of production, different styles of beans, and some basic chemistry related to production. Students will learn how to make their own coffe, and will no longer rely on cafes.
 
-        <ol>
-            <li>Perferendis tempor</li>
-            <li>Minim eiusmod </li>
-            <li>Tempor</li>
-            <li>Minus quia sint</li>
-        </ol>
-
-        <h2>Voluptates mollitia quod tempore laboris&nbsp;commodi</h2>
-
-        <p>Proident dolores corrupti consequatur voluptatibus labore commodi quos. <b>Incidunt mollitia</b> tempora assumenda laborum voluptate accusamus dolore optio incididunt. Maiores at duis consequatur corrupti consectetur, aliquam optio commodo accusamus distinctio, necessitatibus&nbsp;nostrum.</p>
-
-        <p>Optio, nesciunt, quo, fugiat, blanditiis at quas excepturi quae maiores vel corrupti voluptate cupiditate nemo! In, eius quidem harum quibusdam ratione non. Iste, deleniti, fugit, voluptas aperiam qui adipisci provident ab accusantium possimus eveniet voluptate&nbsp;consectetur!</p>
-
-        <h2>Repellat optio</h2>
-
-        <h3>Ad perferendis omnis</h3>
-
-        <p>Pariatur animi quis. Dolorem cupiditate <a href="#">praesentium duis</a> iusto corrupti nobis nostrud, exercitation consequatur. Nulla minim dignissimos reprehenderit voluptatem. Recusandae delectus iure vel asperiores saepe dolorum omnis eu aliquam&nbsp;similique.</p>
-
-        <blockquote><p>Fuga rerum laboris officia cupidatat, excepteur aliquid ut quis facere, cumque harum optio dignissimos. Duis repellat tempore dolor blanditiis alias impedit officiis ut&nbsp;consectetur.</p></blockquote>
-
-        <pre><code>body {
-    color: blue;
-}</code></pre>
-
-        <h4>Quibusdam illum quo</h4>
-
-        <p>Quos laboris eos, laborum animi. Ea blanditiis ducimus fugiat officia nostrud consectetur recusandae excepteur. Quis qui maiores distinctio facilis saepe&nbsp;eos.</p>
-
-        <h5>Consectetur nobis consequat voluptates&nbsp;eiusmod</h5>
-
-        <p>Iure vel nostrud repellendus. <b>Nostrud</b> autem consequatur, provident officiis qui, mollit exercitation. Veniam minus cillum suscipit aliqua, tenetur. Anim mollitia necessitatibus ad quos consectetur voluptatem do&nbsp;<a href="#">corporis</a>.</p>
-
-        <ul>
-            <li>Perferendis tempor</li>
-            <li>Minim eiusmod </li>
-            <li>Tempor</li>
-            <li>Minus quia sint</li>
-        </ul>
-
-        <p>Corporis eligendi minim, enim proident reprehenderit iusto. <i>Reprehenderit</i> commodo commodi, repudiandae voluptas saepe sint libero. Praesentium eius distinctio ullamco vero iusto praesentium eligendi animi. Consectetur dolore vero similique dolore, ut labore&nbsp;omnis.</p>
-
-        <h6>Maxime alias anim similique</h6>
-
-        <p>Omnis corporis assumenda nisi ullam dolores culpa repellat. Molestias praesentium necessitatibus minus, reiciendis officiis commodo incidunt. Consectetur nostrud odio numquam&nbsp;tenetur.</p>
-
-        <hr>
-
-        <h1>Heading level 1</h1>
-
-        <h2>Heading level 2</h2>
-
-        <h3>Heading level 3</h3>
-
-        <h4>Heading level 4</h4>
-
-        <h5>Heading level 5</h5>
-
-        <h6>Heading level 6</h6>
-
-        <p>Paragraph with <b>bold</b>, <i>italic</i>, <a href="#">link</a> and <code>code</code> styles.</p>
-
-        <blockquote><p>Blockquote</p></blockquote>
-
-        <p class="caption">Caption text</p>
-
-        <ol>
-            <li>Ordered list element one</li>
-            <li>Ordered list element two</li>
-            <li>Ordered list element three</li>
-        </ol>
-
-        <ul>
-            <li>Unordered list element one</li>
-            <li>Unordered list element two</li>
-            <li>Unordered list element three</li>
-        </ul>
-      </div>
+              <br>
+              <a am-z="top" href="http://pvcc.twnsnd.co">Link</a>
+            </p>
+          
+          <!-- end project loop -->
+          </div>
+        </article>
+        <!-- filler haxx -->
+        <span class="fillerati"></span>
+      </section>
+    </main>
+    <footer class="typeset">
+  <article am-Grid-Row="gutters between baseline">
+    <div am-grid-col="3">
+      <p am-text="opacity:25">
+        Great designers tend to be a great humans. They can empathize and can apply perspectives other than their own. They can accept criticism, be told that they are wrong, and stand up for what they think is right.
+      </p>
     </div>
-
-    <div class="section typeset">
-      <div class="column column--duo">
-        <h6>Column one</h6>
-        <p>Consectetur adipisicing elit, alias at autem magna aliquid <a href="#">quam proident</a> quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia&nbsp;sint.</p>
-      </div>
-
-      <div class="column column--duo">
-        <h6>Column two</h6>
-        <p>Quos atque officia quod. <i>Suscipit delectus</i> cupidatat, quia nulla numquam aute cillum proident. Maiores iusto culpa molestias quam id tenetur saepe impedit reiciendis itaque ducimus itaque nostrud. Tempor aliquip, culpa earum itaque sed consequatur minus aliquip reprehenderit nihil veniam tempora do maxime omnis reiciendis elit&nbsp;tempora.</p>
-      </div>
+    <div am-grid-col="3">
+      <p am-text="center"><a href="#top">Back To Top</a></p>
+      <p am-text="opacity:25 center"> © 2014 Cole Townsend</p>
+      </small>
     </div>
-
-    <div class="section typeset">
-      <div class="column column--trio">
-        <h6>Column one</h6>
-        <p>Consectetur adipisicing elit, alias at autem magna aliquid <a href="#">quam proident</a> quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia&nbsp;sint.</p>
-      </div>
-
-      <div class="column column--trio">
-        <h6>Column two</h6>
-        <p>Quos atque officia quod. <i>Suscipit delectus</i> cupidatat, quia nulla numquam aute cillum proident. Maiores iusto culpa molestias quam id tenetur saepe impedit reiciendis itaque ducimus itaque nostrud. Tempor aliquip, culpa earum itaque sed consequatur minus aliquip reprehenderit nihil veniam tempora do maxime omnis reiciendis elit&nbsp;tempora.</p>
-      </div>
-
-      <div class="column column--trio">
-        <h6>Column three</h6>
-        <p>Quos atque officia quod. <i>Suscipit delectus</i> cupidatat, quia nulla numquam aute cillum proident. Maiores iusto culpa molestias quam id tenetur saepe impedit reiciendis itaque ducimus itaque nostrud. Tempor aliquip, culpa earum itaque sed consequatur minus aliquip reprehenderit nihil veniam tempora do maxime omnis reiciendis elit&nbsp;tempora.</p>
-      </div>
+    <div am-grid-col="3">
+      <p am-text="opacity:25">
+        Set in Neuzeit Grotesk. <br>
+        Built with Jekyll, SCSS, and HTML. <br>
+        Served via Github Pages.
+      </p>
     </div>
+  </article>
+</footer>
 
-    <div class="section typeset">
-      <div class="column column--quad">
-        <h6>Column one</h6>
-        <p>Consectetur adipisicing elit, alias at autem magna aliquid <a href="#">quam proident</a> quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia&nbsp;sint.</p>
-      </div>
+<script data-no-instant src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/twnsnd.co/js/jquery.fluidbox.js"></script>
+<script src="/twnsnd.co/js/uilang.js"></script>
+<script type="text/javascript" src="/twnsnd.co/js/retina.js"></script>
+<script data-no-instant src="/twnsnd.co/js/velocity.min.js"></script>
 
-      <div class="column column--quad">
-        <h6>Column two</h6>
-        <p>Quos atque officia quod. <i>Suscipit delectus</i> cupidatat, quia nulla numquam aute cillum proident. Maiores iusto culpa molestias quam id tenetur saepe impedit reiciendis itaque ducimus itaque nostrud. Tempor aliquip, culpa earum itaque sed consequatur minus aliquip reprehenderit nihil veniam tempora do maxime omnis reiciendis elit&nbsp;tempora.</p>
-      </div>
 
-      <div class="column column--quad">
-        <h6>Column three</h6>
-        <p>Quos atque officia quod. <i>Suscipit delectus</i> cupidatat, quia nulla numquam aute cillum proident. Maiores iusto culpa molestias quam id tenetur saepe impedit reiciendis itaque ducimus itaque nostrud. Tempor aliquip, culpa earum itaque sed consequatur minus aliquip reprehenderit nihil veniam tempora do maxime omnis reiciendis elit&nbsp;tempora.</p>
-      </div>
+<!-- Typekit -->
 
-      <div class="column column--quad">
-        <h6>Column four</h6>
-        <p>Quos atque officia quod. <i>Suscipit delectus</i> cupidatat, quia nulla numquam aute cillum proident. Maiores iusto culpa molestias quam id tenetur saepe impedit reiciendis itaque ducimus itaque nostrud. Tempor aliquip, culpa earum itaque sed consequatur minus aliquip reprehenderit nihil veniam tempora do maxime omnis reiciendis elit&nbsp;tempora.</p>
-      </div>
-    </div>
 
-    <div class="section typeset">
-      <div class="column column--main">
-        <h6>Main column</h6>
-        <p>Consectetur adipisicing elit, alias at autem magna aliquid <a href="#">quam proident</a> quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia&nbsp;sint.</p>
+<script data-no-instant src="/twnsnd.co/js/smooth-scroll.min.js"></script>
 
-        <p>Consectetur adipisicing elit, alias at autem magna aliquid <a href="#">quam proident</a> quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia&nbsp;sint.</p>
-      </div>
+<script>
+ $(document).ready(function() {
+  $('a').smoothScroll({offset: -20});
+  $('#work').smoothScroll({offset: -60});
+  $('#top').smoothScroll({offset: 120});
+ });
+</script>
 
-      <div class="column column--sidebar">
-        <h6>Sidebar</h6>
-        <p>Quos atque officia quod. <i>Suscipit delectus</i> cupidatat, quia nulla numquam aute cillum proident. Maiores iusto culpa molestias quam id tenetur saepe impedit reiciendis itaque ducimus itaque nostrud. Tempor aliquip, culpa earum itaque sed consequatur minus&nbsp;aliquip.</p>
-      </div>
-    </div>
+<script data-no-instant>
+$(function () {
+  $(".zoomIt").fluidbox({
+    closeTrigger: [
+      { selector: '#fluidbox-overlay', event: 'click'},
+      { selector: 'window', event: 'scroll'}
+    ]
+  });
+});
+</script>
 
-    <div class="section typeset">
-      <div class="column column--sidebar">
-        <h6>Sidebar</h6>
-        <p>Quos atque officia quod. <i>Suscipit delectus</i> cupidatat, quia nulla numquam aute cillum proident. Maiores iusto culpa molestias quam id tenetur saepe impedit reiciendis itaque ducimus itaque nostrud. Tempor aliquip, culpa earum itaque sed consequatur minus&nbsp;aliquip.</p>
-      </div>
+<script>
+  $(".work-grid")
+  .velocity({delay: 300})
+  .velocity({ scale: 0}, 100, [ 250, 15 ])
+  .velocity({opacity: 1}, 100)
+  .velocity({ scale: 1 }, 800, [ 260, 13 ]);
+</script>
 
-      <div class="column column--main">
-        <h6>Main column</h6>
-        <p>Consectetur adipisicing elit, alias at autem magna aliquid <a href="#">quam proident</a> quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia&nbsp;sint.</p>
+<script>
+  $(".buffalo")
+  .velocity({delay: 300})
+  .velocity({ scale: 0}, 100, [ 250, 15 ])
+  .velocity({opacity: .5}, 100)
+  .velocity({ scale: 1 }, 800, [ 260, 13 ]);
+</script>
 
-        <p>Consectetur adipisicing elit, alias at autem magna aliquid <a href="#">quam proident</a> quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia&nbsp;sint.</p>
-      </div>
-    </div>
+<script>
+  $(function () {
+    $('a[role="fluidbox"]').fluidbox();
+  })
+</script>
 
-    <div class="section typeset">
-      <div class="column column--main column--right">
-        <h6>Main column</h6>
-        <p>Consectetur adipisicing elit, alias at autem magna aliquid <a href="#">quam proident</a> quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia&nbsp;sint.</p>
+<script>
+  !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
+  arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
+  d.src='//d1l6p2sc9645hc.cloudfront.net/tracker.js';q.parentNode.
+  insertBefore(d,q)}(window,document,'script','_gs');
 
-        <p class="caption sidenote">This is an inline caption.</p>
+  _gs('GSN-487843-D');
+</script>
 
-        <p>Consectetur adipisicing elit, alias at autem magna aliquid <a href="#">quam proident</a> quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia&nbsp;sint.</p>
+<script>
+// Grid toggle
+function changeClass() {
+  if ( document.getElementById("baseline").className.match(/(?:^|\s)show-grid(?!\S)/) ) {
+    document.getElementById("baseline").className = document.getElementById("baseline").className.replace( /(?:^|\s)show-grid(?!\S)/g , '' )
+  } else { document.getElementById("baseline").className += " show-grid"; }
+}
+document.getElementById("gridtoggle").addEventListener( 'click' , changeClass );
+</script>
 
-        <p>Consectetur adipisicing elit, alias at autem magna aliquid <a href="#">quam proident</a> quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia&nbsp;sint.</p>
-      </div>
-    </div>
+<script src="/javascripts/instantclick.js" data-no-instant></script>
 
-    <div class="section typeset">
-      <div class="column column--main column--left">
-        <h6>Main column</h6>
-        <p>Consectetur adipisicing elit, alias at autem magna aliquid <a href="#">quam proident</a> quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia&nbsp;sint.</p>
+<script data-no-instant>
+  InstantClick.init(55);
+</script>
 
-        <p class="caption sidenote">This is a long inline caption that will probably go across a couple of&nbsp;lines.</p>
 
-        <p>Consectetur adipisicing elit, alias at autem magna aliquid <a href="#">quam proident</a> quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia&nbsp;sint.</p>
 
-        <p>Consectetur adipisicing elit, alias at autem magna aliquid <a href="#">quam proident</a> quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia&nbsp;sint.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer class="global-footer">
-    <p>Hodor</p>
-  </footer>
-
-  <script>
-  var navigation = responsiveNav(".main-nav");
-
-  // Grid toggle
-  function changeClass() {
-    if ( document.getElementById("baseline").className.match(/(?:^|\s)show-grid(?!\S)/) ) {
-      document.getElementById("baseline").className = document.getElementById("baseline").className.replace( /(?:^|\s)show-grid(?!\S)/g , '' )
-    } else { document.getElementById("baseline").className += " show-grid"; }
-  }
-  document.getElementById("gridtoggle").addEventListener( 'click' , changeClass );
-  </script>
-</body>
+    <code>
+      clicking on ".fillerati" removes class "active" on "h3.active"
+      clicking on ".fillerati" removes class ".elevated" on "itself"
+      clicking on ".toggle-expand" removes class "active" on "h3.active"
+      clicking on ".toggle-expand" adds class "active" on "itself"
+      
+      clicking on ".nos" adds class "nos-color" on ".colorways"
+      clicking on ".nos" adds class ".elevated" on ".fillerati"
+      clicking on ".fillerati" removes class "nos-color" on ".colorways"
+      
+      clicking on ".meeet" adds class "meeet-color" on ".colorways"
+      clicking on ".meeet" adds class ".elevated" on ".fillerati"
+      clicking on ".fillerati" removes class "meeet-color" on ".colorways"
+      
+      clicking on ".thenews" adds class "thenews-color" on ".colorways"
+      clicking on ".thenews" adds class ".elevated" on ".fillerati"
+      clicking on ".fillerati" removes class "thenews-color" on ".colorways"
+      
+      clicking on ".williams" adds class "williams-color" on ".colorways"
+      clicking on ".williams" adds class ".elevated" on ".fillerati"
+      clicking on ".fillerati" removes class "williams-color" on ".colorways"
+      
+      clicking on ".pvcc" adds class "pvcc-color" on ".colorways"
+      clicking on ".pvcc" adds class ".elevated" on ".fillerati"
+      clicking on ".fillerati" removes class "pvcc-color" on ".colorways"
+      
+    </code>
+  </body>
 </html>
+
