@@ -56,24 +56,37 @@
       </section>
       {% endif %}
       <!-- Side projects -->
-      {% if site.projects %}
-      <section id="projects" am-Block="3" class="typeset">
-        <article am-Grid-Row>
+      <section id="projects" am-Block="3" class="typeset colorways">
+        <article am-Grid-Row="">
           <h2 am-Grid-Col="11 offset:1">Currently Working On&#58;</h2>
           <div am-block="project" am-Grid-Col="11 offset:1">
-          {% for project in site.projects %}
-            <h3 class="toggle-expand">{{ post.title }}</h3>
-            <p am-text="excerpt" class="hidden-info">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
-            <a href="{{ site.url }}{{ post.url }}">See it</a>
-          {% endfor %} <!-- end project loop -->
+          <!-- Project Loop -->
+          {% for project in site.data.projects %}
+            <h3 class="toggle-expand {{ project.class }}">{{ project.title }}</h3>
+            <p am-text="excerpt" class="hidden-info">
+              {{ project.info }}
+              <br>
+              <a am-z="top" href="{{ project.url }}">Link</a>
+            </p>
+          {% endfor %}
+          <!-- end project loop -->
           </div>
         </article>
+        <!-- filler haxx -->
+        <span class="fillerati"></span>
       </section>
-      {% endif %}
     </main>
     {% include _footer.html %}
     <code>
-      clicking on "h3" toggles class ".active" on "target"
+      clicking on ".fillerati" removes class "active" on "h3.active"
+      clicking on ".fillerati" removes class ".elevated" on "itself"
+      clicking on ".toggle-expand" removes class "active" on "h3.active"
+      clicking on ".toggle-expand" adds class "active" on "itself"
+      {% for project in site.data.projects %}
+      clicking on ".{{ project.class }}" adds class "{{ project.class }}-color" on ".colorways"
+      clicking on ".{{ project.class }}" adds class ".elevated" on ".fillerati"
+      clicking on ".fillerati" removes class "{{ project.class }}-color" on ".colorways"
+      {% endfor %}
     </code>
   </body>
 </html>

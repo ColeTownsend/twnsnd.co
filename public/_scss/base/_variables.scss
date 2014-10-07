@@ -113,11 +113,11 @@ $maroon:  #85144B;
 $red: #EC6F66;
 
 // Ebony and Ivory
-$black:  $blue-gray;
 $white: #ffffff;
 
 // Others
 $real-black: #323438;
+$black:  $real-black;
 $dark-gray: lighten($black, 32%);
 $medium-gray: lighten($black, 48%);
 $red-gray: #ebebea;
@@ -126,9 +126,11 @@ $light-red: #FBE3E4;
 $light-yellow: #FFF6BF;
 $light-green: #E6EFC2;
 
+
+
+
 // White
 $off-white: darken(#ffffff, 1%);
-
 
 // Body Color
 $base-body-color: $white;

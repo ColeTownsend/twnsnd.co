@@ -9,11 +9,12 @@ body {
   color: $bodyColour;
   overflow-x: hidden;
   width: 100%;
+  height: 100%;
 }
 
 .Site {
   display: flex;
-  min-height: 100vh;
+  // min-height: 100vh;
   flex-direction: column;
 }
 
@@ -60,4 +61,20 @@ img {
 
 [am-position~="absolute"] {
   position: absolute;
+}
+
+[am-z~="top"] {
+  z-index: 100;
+}
+
+[am-z~="mid"] {
+  z-index: 2;
+}
+
+[am-z~="bottom"] {
+  z-index: 1;
+}
+
+[am-z~="below"] {
+  z-index: -1;
 }
