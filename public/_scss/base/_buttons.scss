@@ -18,4 +18,8 @@
   position: absolute;
   left: -6rem;
   top: 1.6rem;
+  @include breakpoint(break-1) {
+    left: 0;
+    right: -6rem;
+  }
 }

@@ -2,7 +2,7 @@
   position: relative;
   min-height: min-content;
   padding: 0;
-  min-height: calc(100% - 16rem);
+  min-height: calc(100% - 12rem);
   @include transition(background .2s $ease-in-out-quad);
   // the title
   h3 {
@@ -44,6 +44,12 @@
       top: 1.6rem;
       @include transition(opacity .2s $ease-in-out-quad);
       cursor: pointer;
+      // small
+      @media (max-width: 500px) {
+        opacity: 1;
+        left: 100%;
+        top: 1.7rem;
+      }
     }
   }
   h3.active {
@@ -60,6 +66,7 @@
     @include transition(max-height .2s $ease-in-out-quad);
     max-height: 18rem;
     z-index: 9999;
+    margin-bottom: 2rem;
   }
   h3.active ~ h3 {
     @include transition(translateY .3s $ease-in-out-quad);
@@ -126,10 +133,10 @@
 
 .pvcc-color {
   @include transition(background .4s $ease-in-out-quad);
-  background-image: -o-linear-gradient(-44deg, #40F4B0 0%, #AB53F8 100%);
-  background-image: -moz-linear-gradient(-44deg, #40F4B0 0%, #AB53F8 100%);
-  background-image: -ms-linear-gradient(-44deg, #40F4B0 0%, #AB53F8 100%);
-  background-image: linear-gradient(-134deg, #40F4B0 0%, #AB53F8 100%);
+  background-image: -o-linear-gradient(-134deg, #7ED3FB 0%, #8E75E6 100%);
+  background-image: -moz-linear-gradient(-134deg, #7ED3FB 0%, #8E75E6 100%);
+  background-image: -ms-linear-gradient(-134deg, #7ED3FB 0%, #8E75E6 100%);
+  background-image: linear-gradient(-224deg, #7ED3FB 0%, #8E75E6 100%);
 }
 
 .williams-color {
