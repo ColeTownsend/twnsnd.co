@@ -1,0 +1,30 @@
+- title: New Old Stock
+  url: 'http://nos.twnsnd.co'
+  info: |
+        Vintage photos from the public archives, free of known copyright restrictions. I do this in my spare time.
+  active: active
+  class: nos
+
+- title: Meeet Co
+  url: 'http://meeet.co'
+  info: |
+          Meeet is the place to find a collaborator to help you ship that side project left by the wayside. We're here to help you find the best person to help you ship your project and discover your next one. Your portfolio will be stronger in no time.
+  class: meeet
+
+- title: TheNews
+  url: 'http://thenewsapp.co/'
+  info: |
+          TheNews integrates the two best discussion sites on the web. Swipe between sources quickly to stay on top of the latest news.
+  class: thenews
+
+- title: Bachelors Degree
+  url: 'http://williams.edu'
+  info: |
+          I'm a current senior and Art History Major at Williams College. I also run for the cross country and track teams, organize Purple Valley Coffee club, and co-chair Men for Consent.
+  class: williams
+
+- title: Purple Valley Coffee Club
+  url: 'http://pvcc.twnsnd.co'
+  info: |
+          This group will expose students, both familiar and unfamiliar to coffee and brewing, to new methods of production, different styles of beans, and some basic chemistry related to production. Students will learn how to make their own coffe, and will no longer rely on cafes.
+  class: pvcc
