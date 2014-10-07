@@ -7,6 +7,8 @@ var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
 var deploy      = require("gulp-gh-pages");
 var minifyCSS   = require('gulp-minify-css');
+var uglify      = require('gulp-uglify');
+
 
 // images
 // var imagemin = require('gulp-imagemin');
@@ -76,9 +78,9 @@ gulp.task('sass', function () {
 
 // Minify css
 gulp.task('minify-css', function() {
-  gulp.src('dist/css/*.css')
-    .pipe(minifyCSS({keepBreaks:true}))
-    .pipe(gulp.dest('dist/css'));
+  gulp.src('public/css/i.css')
+    .pipe(minifyCSS({keepBreaks:true, debug:true}))
+    .pipe(gulp.dest('public/css'));
 });
 
 // minify images
@@ -87,6 +89,12 @@ gulp.task('images', function() {
     .pipe(changed(paths.img))
     .pipe(imagemin({optimizationLevel: 5}))
     .pipe(gulp.dest(paths.img));
+});
+
+gulp.task('uglify', function() {
+  gulp.src('public/js/*.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('public/js'))
 });
 
 /**
@@ -99,7 +107,7 @@ gulp.task('watch', function () {
 });
 
 
-gulp.task("deploy", ["jekyll-build"], function () {
+gulp.task("deploy", ["sass","minify-css","uglify","jekyll-build"], function () {
     return gulp.src(["./dist/**/*","./_config.yml"])
         .pipe(deploy());
 });
