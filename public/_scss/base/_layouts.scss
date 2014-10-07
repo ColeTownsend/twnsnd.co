@@ -1,6 +1,21 @@
 // Layouts
 // ---------------------------------------
 
+// Neat Grid
+article {
+  @extend %container;
+  // @include clearfix;
+}
+
+section {
+  margin: 2rem auto;
+}
+
+.container {
+  @extend %container;
+  // @include clearfix;
+}
+
 // Container.
 .section {
   margin: 0 auto;

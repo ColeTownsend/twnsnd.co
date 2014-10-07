@@ -1,0 +1,22 @@
+[am-Block="1"] {
+  height: calc(100vh - 12rem);
+  min-height: 16rem;
+  float: none;
+  display: block;
+  @include clearfix;
+  position: relative;
+  // vertical align hack
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  [am-text~="hero"] {
+    display: block;
+    width: 100%;
+    @extend %vertical-align;
+    @include media($small) {
+      br {
+        display: none;
+      }
+    }
+  }
+}

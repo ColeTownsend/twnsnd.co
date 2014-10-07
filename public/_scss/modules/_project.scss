@@ -45,10 +45,12 @@
       @include transition(opacity .2s $ease-in-out-quad);
       cursor: pointer;
       // small
-      @media (max-width: 500px) {
+      @include media($small) {
         opacity: 1;
         left: 100%;
-        top: 1.7rem;
+        top: 1.2em;
+        line-height: 1.4em;
+        padding: .4em .4em .4em .4em;
       }
     }
   }
@@ -86,14 +88,8 @@
   position: relative;
 }
 
-.colorways {
-  background: $backgroundColour;
-  @include transition(background .4s $ease-in-out-quad);
-  transition:background-color 0.5s ease;
-}
-
-.pvcc-color, .williams-color, .thenews-color, .meeet-color, .nos-color, .meeet-color {
-  @include transition(background .2s $ease-in-out-quad);
+.whiten {
+  @include transition(opacity .2s $ease-in-out-quad);
   h2, h3, p {
     color: $white;
   }
@@ -131,6 +127,21 @@
   }
 }
 
+// Project Coloring
+$projects: (pvcc-color, williams-color, nos-color, thenews-color, meeet-color);
+
+.colorways {
+  opacity: 0;
+  @extend .fillerati;
+  @include transition(opacity .4s $ease-in-out-quad);
+  @each $project in $projects {
+    &.#{$project} {
+      opacity: 1;
+      @include transition(opacity .2s $ease-in-out-quad);
+    }
+  }
+}
+
 .pvcc-color {
   @include transition(background .4s $ease-in-out-quad);
   background-image: -o-linear-gradient(-134deg, #7ED3FB 0%, #8E75E6 100%);
@@ -141,29 +152,29 @@
 
 .williams-color {
   @include transition(background .4s $ease-in-out-quad);
-  background: -webkit-linear-gradient(90deg, #1D2B64 10%, #F8CDDA 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(90deg, #1D2B64 10%, #F8CDDA 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(90deg, #1D2B64 10%, #F8CDDA 90%); /* IE10 */
-  background:      -o-linear-gradient(90deg, #1D2B64 10%, #F8CDDA 90%); /* Opera 11.10+ */
-  background:         linear-gradient(90deg, #1D2B64 10%, #F8CDDA 90%); /* W3C */
+  background: -webkit-linear-gradient(-134deg, #1D2B64 10%, #F8CDDA 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(-134deg, #1D2B64 10%, #F8CDDA 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(-134deg, #1D2B64 10%, #F8CDDA 90%); /* IE10 */
+  background:      -o-linear-gradient(-134deg, #1D2B64 10%, #F8CDDA 90%); /* Opera 11.10+ */
+  background:         linear-gradient(-224deg, #1D2B64 10%, #F8CDDA 90%); /* W3C */
 }
 
 .nos-color {
   @include transition(background .4s $ease-in-out-quad);
-  background: -webkit-linear-gradient(90deg, #606c88 10%, #3f4c6b 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(90deg, #606c88 10%, #3f4c6b 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(90deg, #606c88 10%, #3f4c6b 90%); /* IE10 */
-  background:      -o-linear-gradient(90deg, #606c88 10%, #3f4c6b 90%); /* Opera 11.10+ */
-  background:         linear-gradient(90deg, #606c88 10%, #3f4c6b 90%); /* W3C */
+  background: -webkit-linear-gradient(-134deg, #606c88 10%, #3f4c6b 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(-134deg, #606c88 10%, #3f4c6b 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(-134deg, #606c88 10%, #3f4c6b 90%); /* IE10 */
+  background:      -o-linear-gradient(-134deg, #606c88 10%, #3f4c6b 90%); /* Opera 11.10+ */
+  background:         linear-gradient(-224deg, #606c88 10%, #3f4c6b 90%); /* W3C */
 }
 
 .thenews-color {
   @include transition(background .4s $ease-in-out-quad);
-  background: -webkit-linear-gradient(90deg, #348F50 10%, #56B4D3 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(90deg, #348F50 10%, #56B4D3 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(90deg, #348F50 10%, #56B4D3 90%); /* IE10 */
-  background:      -o-linear-gradient(90deg, #348F50 10%, #56B4D3 90%); /* Opera 11.10+ */
-  background:         linear-gradient(90deg, #348F50 10%, #56B4D3 90%); /* W3C */
+  background: -webkit-linear-gradient(-134deg, #348F50 10%, #56B4D3 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(-134deg, #348F50 10%, #56B4D3 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(-134deg, #348F50 10%, #56B4D3 90%); /* IE10 */
+  background:      -o-linear-gradient(-134deg, #348F50 10%, #56B4D3 90%); /* Opera 11.10+ */
+  background:         linear-gradient(-224deg, #348F50 10%, #56B4D3 90%); /* W3C */
 }
 
 .meeet-color {

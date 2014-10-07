@@ -10,6 +10,9 @@
   @include fontsize(theta, all);
   @include border-top-radius($base-border-radius);
   @include border-bottom-radius($base-border-radius);
+  @include media($small) {
+    padding: .2em .4em;
+  }
 }
 
 [am-button~="info"] {
@@ -18,7 +21,7 @@
   position: absolute;
   left: -6rem;
   top: 1.6rem;
-  @include breakpoint(break-1) {
+  @include media($small) {
     left: 0;
     right: -6rem;
   }

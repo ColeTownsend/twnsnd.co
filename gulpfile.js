@@ -1,19 +1,31 @@
 var gulp        = require('gulp');
+var glob        = require('glob');
 var browserSync = require('browser-sync');
+var notify      = require('gulp-notify');
+var plumber     = require('gulp-plumber');
 // var sass        = require('gulp-sass');
 var sass        = require('gulp-ruby-sass');
 // var sourcemaps = require('gulp-sourcemaps');
 var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
 var deploy      = require("gulp-gh-pages");
+// minification
 var minifyCSS   = require('gulp-minify-css');
+var uncss       = require('gulp-uncss');
+// js
 var uglify      = require('gulp-uglify');
-
-
+var concat      = require('gulp-concat');
 // images
-// var imagemin = require('gulp-imagemin');
-// var changed = require('gulp-changed');
-// var defaultSettings = require("./settings.json");
+var size        = require('gulp-size');
+var imagemin    = require('gulp-imagemin');
+var newer       = require('gulp-newer');
+var cache       = require('gulp-cache');
+var changed     = require('gulp-changed');
+
+// error handlig
+var onError = function(err) {
+    console.log(err);
+}
 
 
 var messages = {
@@ -76,38 +88,64 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('public/css'));
 });
 
+// css removal
+gulp.task('uncss', function() {
+    gulp.src('dist/css/i.css')
+        .pipe(uncss({
+            html: glob.sync('dist/**/*.html', 'dist/*.html'),
+            ignore: [ // Keep some JS dependent CSS from being deleted,
+                      // these are examples, you should configure as needed
+                '.active',
+                '.*-color',
+            ]
+        }))
+        .pipe(gulp.dest('./out'));
+});
+
 // Minify css
 gulp.task('minify-css', function() {
-  gulp.src('public/css/i.css')
+  gulp.src('dist/css/i.css')
     .pipe(minifyCSS({keepBreaks:true, debug:true}))
-    .pipe(gulp.dest('public/css'));
+    .pipe(gulp.dest('dist/css/'));
 });
+
 
 // minify images
 gulp.task('images', function() {
-  return gulp.src(paths.imagesSrc + '/**/*')
-    .pipe(changed(paths.img))
-    .pipe(imagemin({optimizationLevel: 5}))
-    .pipe(gulp.dest(paths.img));
+    var imgSrc = './public/images/**/*',
+        imgDst = './dist/images';
+
+    return gulp.src(imgSrc)
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(changed(imgDst))
+        .pipe(imagemin())
+        .pipe(gulp.dest(imgDst))
+        .pipe(notify({ message: 'Images task complete' }));
 });
 
-gulp.task('uglify', function() {
-  gulp.src('public/js/*.js')
-    .pipe(uglify())
-    .pipe(gulp.dest('public/js'))
+// concat
+gulp.task('concat', function() {
+  gulp.src(['./public/js/*.min.js', './public/js/uilang.min.js'])
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest('./public/js'))
+    .pipe(notify({ message: 'Scripts concatenated' }));
 });
+
 
 /**
  * Watch scss files for changes & recompile
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
+    gulp.watch('./public/js/*.js', ['concat']);
     gulp.watch('./public/**/*.scss', ['sass']);
-    gulp.watch(['public/index.html', 'public/_data/*','public/_includes/*.html', 'public/_layouts/*.html', 'public/_posts/*'], ['jekyll-rebuild']);
+    gulp.watch(['public/*.html', 'public/_data/*','public/_includes/*.html', 'public/_layouts/*.html', 'public/_posts/*'], ['jekyll-rebuild']);
 });
 
 
-gulp.task("deploy", ["sass","minify-css","uglify","jekyll-build"], function () {
+gulp.task("deploy", ["sass", "concat","jekyll-build", "images", "minify-css"], function () {
     return gulp.src(["./dist/**/*","./_config.yml"])
         .pipe(deploy());
 });

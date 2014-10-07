@@ -1,10 +1,10 @@
 // bourbon + neat
 @import "../_components/bourbon/dist/_bourbon.scss";
-// @import "_grid-settings";
-// @import "../_components/bower-neat/_neat.scss";
+@import "_grid-settings";
+@import "../_components/bower-neat/_neat.scss";
 
 // am-grid
-@import "../_components/am-grid/dist/grid.scss";
+// @import "../_components/am-grid/dist/grid.scss";
 
 
 // sassline
@@ -23,6 +23,7 @@
 @import "modules/globals";
 @import "modules/header";
 @import "modules/nav";
+@import "modules/hero";
 @import "modules/project";
 
 // Demo baseline grid styles.

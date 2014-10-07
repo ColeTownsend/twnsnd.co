@@ -1,15 +1,18 @@
 // Footer demo styles
 // ---------------------------------------
 footer {
+  // sticky hax
+  width: 100%;
+  height: 16rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  // aesthetics
   $footerBG: $real-black;
   padding: 2rem;
   background: $footerBG;
-  display: none;
-  height: 16rem;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+
+  // nexted styles
   [am-text] {
    @include fontsize(theta, all);
    line-height: 1rem;
@@ -17,18 +20,5 @@ footer {
   }
   &.typeset p a {
     @include link-hover($white, $real-black, 20, underline);
-  }
-}
-.global-footer {
-  p {
-    color: $captionColour;
-    font-family: unquote(map-get($headingtype, font-family));
-    font-style: normal;
-    font-weight: map-get($headingtype, regular);
-    padding: 1rem 0;
-    margin: 0;
-    text-align: center;
-
-    @include fontsize(theta, all);
   }
 }

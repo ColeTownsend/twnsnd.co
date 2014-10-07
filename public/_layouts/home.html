@@ -2,82 +2,29 @@
   {% include _head.html %}
   <body class="home site">
     {% include _navigation_main.html %}
-    <main class="site-content">
-      <section am-Block="1" class="typeset">
-        <article am-Grid-Row="middle">
-          <h2 am-Grid-Col="12 middle" am-Text="hero">
-            Cole Townsend is a designer who wants to work with you.
-            <br>
-            He has a passion for clean and intuitive solutions.
-            <br>
-            {% if site.data.work_status contains 'unavailable' %}
-            He is unavailable, but please take a look anyway.</a>
-            {% elsif site.data.work_status contains 'kinda' %}
-            He is available for small projects. See his work below.
-            {% else %}
-            Want to work with him? Select pieces below.
-            {% endif %}
-          </h2>
-        </article>
-      </section>
-      <!-- Portfolio section, sprinkled with blog posts -->
-      {% if site.posts %}
-      <section id="work" am-Block="2" class="typeset">
-        <article am-Grid-Row>
-          <ul>
-          {% for post in site.posts limit: 9 %}
-            {% if post.categories contains 'work' or post.categories contains 'journal' %}
-              <!-- featured image, generally work -->
-              {% if post.image.feature %}
-                <li class="work-grid">
-                  <span class="colorize" style="background:{% if post.accent_color %}{{ post.accent_color}}{% else %}#EFEFEF{% endif %};"></span>
-                  <span class="project" style="background-image: url({{ site.url }}/images/posts/{{ post.image.feature }});"></span>
-                  <a href="{{ site.url }}{{ post.url }}">
-                    <span am-Text="info mono">{{ page.tags | array_to_sentence_string | strip_html }}</span>
-                    <hr am-Divider="4">
-                    <h1 {% if post.title-color %} style="color: {{ post.title-color }};"{% endif %}>{{ post.title }}</h1>
-                  </a>
-              </li>
-              <!-- no feature, almost always blog posts -->
-              {% else %}
-                <li class="work-grid" style="background:{% if post.accent_color %}{{ post.accent_color}}{% else %}#ffffff{% endif %};">
-                  <a am-Link="blank" href="{{ site.url }}{{ post.url }}">
-                    <hr am-Divider="4">
-                    <h1 {% if post.title-color %} style="color: {{ post.title-color }};"{% endif %}>{{ post.title }}</h1>
-                  </a>
-                  <span am-Text="info mono">{{ post.category }} &#8212; {{ post.date | date: "%m %d %y" }}</span>
-                  <a am-link="target" href="{{ site.url }}{{ post.url }}"></a>
-                </li>
-              {% endif %}
-            {% endif %} <!-- end if work loop -->
-          {% endfor %} <!-- end for post loop -->
-          </ul>
-        </article>
-      </section>
-      {% endif %}
-      <!-- Side projects -->
-      <section id="projects" am-Block="3" class="typeset colorways">
-        <article am-Grid-Row="">
-          <h2 am-Grid-Col="11 offset:1">Currently Working On&#58;</h2>
-          <!-- Project Loop -->
-          <div am-block="project" am-Grid-Col="8 offset:1">
-          {% for project in site.data.projects %}
-            <h3 class="toggle-expand {{ project.class }}">{{ project.title }}</h3>
-            <p am-text="excerpt" class="hidden-info">
-              {{ project.info }}
-              <br>
-              <a am-z="top" href="{{ project.url }}">Link</a>
-            </p>
-          {% endfor %}
-          </div>
-          <!-- end project loop -->
-        </article>
-        <!-- filler haxx -->
-        <span class="fillerati"></span>
-      </section>
-    </main>
+    <section class="typeset">
+      <article am-block="1">
+        <h2 am-Text="hero">
+          Cole Townsend is a designer who wants to work with you.
+          <br>
+          He has a passion for clean and intuitive solutions.
+          <br>
+          {% if site.data.work_status contains 'unavailable' %}
+          He is unavailable, but please take a look anyway.</a>
+          {% elsif site.data.work_status contains 'kinda' %}
+          He is available for small projects. See his work below.
+          {% else %}
+          Want to work with him? Select pieces below.
+          {% endif %}
+        </h2>
+      </article>
+    </section>
+    <!-- Portfolio section, sprinkled with blog posts -->
+    {% include _work-loop.html %}
+    {% include _project-loop.html %}
     {% include _footer.html %}
     <code>
+      clicking on ".fillerati" removes class ".whiten" on "#projects"
       clicking on ".fillerati" removes class "active" on "h3.active"
       clicking on ".fillerati" removes class ".elevated" on "itself"
       clicking on ".toggle-expand" removes class "active" on "h3.active"
@@ -85,6 +32,7 @@
       {% for project in site.data.projects %}
       clicking on ".{{ project.class }}" adds class "{{ project.class }}-color" on ".colorways"
       clicking on ".{{ project.class }}" adds class ".elevated" on ".fillerati"
+      clicking on ".{{ project.class }}" adds class ".whiten" on "#projects"
       clicking on ".fillerati" removes class "{{ project.class }}-color" on ".colorways"
       {% endfor %}
     </code>

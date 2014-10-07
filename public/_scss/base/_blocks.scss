@@ -2,12 +2,11 @@
 [am-Grid-Row] {
   max-width: 960px;
   margin: 0 auto;
-  position: relative;
 }
 
 // blocks
 [am-Block] {
-  // min-height: 6rem;
+  min-height: 16rem;
   padding: 4rem 0;
   position: relative;
   [am-Grid-Row] {
@@ -18,8 +17,15 @@
 [am-Block="1"] {
   height: calc(100vh - 8rem);
   min-height: 16rem;
+  display: block;
+  @include clearfix;
   [am-text~="hero"] {
     margin-top: -4rem;
+    @include media($small) {
+      br {
+        display: none;
+      }
+    }
   }
 }
 

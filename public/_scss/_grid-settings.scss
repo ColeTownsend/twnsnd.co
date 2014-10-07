@@ -1,4 +1,4 @@
-@import "neat/neat-helpers"; // or "neat-helpers" when in Rails
+@import "../_components/bower-neat/_neat-helpers.scss"; // or "neat-helpers" when in Rails
 
 // Change the grid settings
 $column: 64px;

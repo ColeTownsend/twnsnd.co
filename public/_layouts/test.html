@@ -1,0 +1,25 @@
+<html lang="en">
+  {% include _head.html %}
+  <body class="Site">
+    {% include _navigation_main.html %}
+    <main am-flex="1">
+      <section am-Block="1" class="typeset">
+          <article am-Grid-Row="middle">
+            <h2 am-Grid-Col="12 middle" am-Text="hero">
+              Cole Townsend is a designer who wants to work with you.
+              <br>
+              He has a passion for clean and intuitive solutions.
+              <br>
+              {% if site.data.work_status contains 'unavailable' %}
+              He is unavailable, but please take a look anyway.</a>
+              {% elsif site.data.work_status contains 'kinda' %}
+              He is available for small projects. See his work below.
+              {% else %}
+              Want to work with him? Select pieces below.
+              {% endif %}
+            </h2>
+          </article>
+        </section>
+    </main>
+    {% include _footer.html %}
+  </body>
