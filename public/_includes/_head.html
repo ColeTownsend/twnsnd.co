@@ -5,14 +5,14 @@
   <title> {{site.name}}{% unless page.layout == "about" or page.layout == "home" %} - {{ page.title }} {% endunless %} </title>
   <meta name="author" content="{{ site.author }}">
   <meta name="description" content="{{ site.description }}">
-  <link type="application/atom+xml" rel="self" href="{{ site.url }}/sitemap.xml"/>
+  <link type="application/atom+xml" rel="self" href="{{ site.baseurl }}/sitemap.xml"/>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
 
-	<link data-no-instant rel="stylesheet" href="{{ site.url }}/css/i.css?v={{ site.version }}">
+	<link data-no-instant rel="stylesheet" href="{{ site.baseurl }}/css/i.css?v={{ site.version }}">
   <script src="{{ site.baseurl }}/js/responsive-nav.min.js"></script>
   {% for css_name in page.extra_css %}
-    <link rel="stylesheet" href="{{ site.url }}{{ css_name }}?v={{ site.version }}">
+    <link rel="stylesheet" href="{{ site.baseurl }}{{ css_name }}?v={{ site.version }}">
   {% endfor %}
 
   <!-- FOUT B Gone -->
@@ -23,8 +23,8 @@
 
   <!-- Favicons and Touch Device Icons -->
   <link rel="shortcut icon" href="{{ site.url }}/images/assets/favicon.ico?v={{ site.version }}">
-  <link data-no-instant rel="apple-touch-icon" href="{{ site.url }}/assets/favicon-128x128.png?v={{ site.version }}">
-  <link data-no-instant rel="apple-touch-icon" sizes="72x72"   href="{{ site.url }}/images/assets/favicon-76x76.png?v={{ site.version }}">
-  <link data-no-instant rel="apple-touch-icon" sizes="114x114" href="{{ site.url }}/images/assets/favicon-128x128.png?v={{ site.version }}">
-  <link data-no-instant rel="apple-touch-icon" sizes="144x144" href="{{ site.url }}/images/assets/favicon-256x256.png?v={{ site.version }}">
+  <link data-no-instant rel="apple-touch-icon" href="{{ site.baseurl }}/assets/favicon-128x128.png?v={{ site.version }}">
+  <link data-no-instant rel="apple-touch-icon" sizes="72x72"   href="{{ site.baseurl }}/images/assets/favicon-76x76.png?v={{ site.version }}">
+  <link data-no-instant rel="apple-touch-icon" sizes="114x114" href="{{ site.baseurl }}/images/assets/favicon-128x128.png?v={{ site.version }}">
+  <link data-no-instant rel="apple-touch-icon" sizes="144x144" href="{{ site.baseurl }}/images/assets/favicon-256x256.png?v={{ site.version }}">
 </head>

@@ -14,11 +14,11 @@
  -->
 
 <header id="top" role="main-header" am-Grid-Row="middle between">
-  <hgroup am-grid-col><a href="{{ site.url }}">{{ site.name }}</a></hgroup>
+  <hgroup am-grid-col><a href="{{ site.baseurl }}">{{ site.name }}</a></hgroup>
   <nav am-grid-col>
     <ul>
       {% for nav_link in site.data.nav_links %}
-        <li><a href="{% if nav_link.external %}{{ nav_link.url }}{% else %}{{ site.url }}{{ nav_link.url }}{% endif %}" {% if nav_link.external %} data-no-instant target="_blank"{% endif %}>{{ nav_link.title }}</a></li>
+        <li><a href="{% if nav_link.external %}{{ nav_link.url }}{% else %}{{ site.baseurl }}{{ nav_link.url }}{% endif %}" {% if nav_link.external %} data-no-instant target="_blank"{% endif %}>{{ nav_link.title }}</a></li>
       {% endfor %}
     </ul>
   </nav>
