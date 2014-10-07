@@ -26,7 +26,6 @@
     <code>
       clicking on ".fillerati" removes class ".whiten" on "#projects"
       clicking on ".fillerati" removes class "active" on "h3.active"
-      clicking on ".fillerati" removes class ".elevated" on "itself"
       clicking on ".toggle-expand" removes class "active" on "h3.active"
       clicking on ".toggle-expand" adds class "active" on "itself"
       {% for project in site.data.projects %}
@@ -35,6 +34,7 @@
       clicking on ".{{ project.class }}" adds class ".whiten" on "#projects"
       clicking on ".fillerati" removes class "{{ project.class }}-color" on ".colorways"
       {% endfor %}
+      clicking on ".fillerati" removes class ".elevated" on "itself"
     </code>
   </body>
 </html>
