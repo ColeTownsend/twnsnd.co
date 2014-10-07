@@ -1,0 +1,29 @@
+// grid fix
+[am-Grid-Row] {
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+}
+
+// blocks
+[am-Block] {
+  // min-height: 6rem;
+  padding: 2rem 0;
+  position: relative;
+  [am-Grid-Row] {
+    min-height: 400px;
+  }
+}
+
+[am-Block="1"] {
+  height: calc(100vh - 8rem);
+  min-height: 16rem;
+  [am-text~="hero"] {
+    margin-top: -4rem;
+  }
+}
+
+[am-Block="2"] {
+  background:red;
+  padding: 2rem 0;
+}

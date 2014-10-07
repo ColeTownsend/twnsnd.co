@@ -1,8 +1,25 @@
 // Footer demo styles
 // ---------------------------------------
-
+footer {
+  $footerBG: $real-black;
+  padding: 2rem;
+  background: $footerBG;
+  display: none;
+  height: 16rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  [am-text] {
+   @include fontsize(theta, all);
+   line-height: 1rem;
+   color: white;
+  }
+  &.typeset p a {
+    @include link-hover($white, $real-black, 20, underline);
+  }
+}
 .global-footer {
-
   p {
     color: $captionColour;
     font-family: unquote(map-get($headingtype, font-family));
@@ -12,6 +29,6 @@
     margin: 0;
     text-align: center;
 
-    @include fontsize(eta, all);
+    @include fontsize(theta, all);
   }
 }

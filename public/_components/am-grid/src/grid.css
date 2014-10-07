@@ -128,6 +128,39 @@
   flex: 0 0 8.3333%;
   max-width: 8.3333%;
 }
+[am-Grid-Col~="offset:1"] {
+  margin-left: 8.333333333%;
+}
+[am-Grid-Col~="offset:2"] {
+  margin-left: 16.666666667%;
+}
+[am-Grid-Col~="offset:3"] {
+  margin-left: 25%;
+}
+[am-Grid-Col~="offset:4"] {
+  margin-left: 33.333333333%;
+}
+[am-Grid-Col~="offset:5"] {
+  margin-left: 41.666666667%;
+}
+[am-Grid-Col~="offset:6"] {
+  margin-left: 50%;
+}
+[am-Grid-Col~="offset:7"] {
+  margin-left: 58.333333333%;
+}
+[am-Grid-Col~="offset:8"] {
+  margin-left: 66.666666667%;
+}
+[am-Grid-Col~="offset:9"] {
+  margin-left: 75%;
+}
+[am-Grid-Col~="offset:10"] {
+  margin-left: 83.333333333%;
+}
+[am-Grid-Col~="offset:11"] {
+  margin-left: 91.666666667%;
+}
 
 
 /* Lap */

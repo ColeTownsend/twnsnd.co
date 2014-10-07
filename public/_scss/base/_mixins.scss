@@ -416,3 +416,66 @@ $max-widths: map-values($maxwidths);
     clear: both;
   }
 }
+
+// links
+/////////////////////////////////////////
+@mixin link-hover($link-color: $base-link-color, $background: $base-body-color, $darken: 20, $type: underline) {
+  color: $link-color;
+  @include transition(color .1s $ease-in-out-quad);
+
+  // with text shadow
+  @if $type == shadow {
+    @include transition(color .1s $ease-in-out-quad);
+  }
+
+  @if $type == underline {
+    background: -webkit-linear-gradient($link-color, $link-color), -webkit-linear-gradient($link-color, $link-color), -webkit-linear-gradient($link-color, $link-color);
+    background-size: 0.04em 1px, 0.04em 1px, 1px 1px;
+    background-repeat: no-repeat, no-repeat, repeat-x;
+    text-shadow: 0.04em 0 $background, -0.04em 0 $background, 0 0.04em $background, 0 -0.06em $background, 0.08em 0 $background, -0.08em 0 $background, 0.08em 0 $background, -0.10em 0 $background, 0.12em 0 $background, -0.12em 0 $background, 0.14em 0 $background, -0.14em 0 $background;
+    background-position-y: 96%, 96%, 96%;
+    background-position-x: 0%, 100%, 0%;
+    @include transition(background-color .2s $ease-in-out-quad);
+  }
+
+  @if $type == on-hover {
+    background: none;
+    background-repeat: no-repeat, no-repeat, repeat-x;
+    text-shadow: none;
+    @include transition(background-color .2s $ease-in-out-quad);
+  }
+
+  // on hover
+  &:hover {
+    color: darken($link-color, $darken);
+    @include transition(color .1s $ease-in-out-quad);
+    @include transition(text-shadow .1s $ease-in-out-quad);
+    @include transition(background-color .2s $ease-in-out-quad);
+
+    // with text shadow
+    @if $type == glow {
+      color: darken($link-color, $darken);
+    }
+
+    // with fancy underline
+    @if type == underline {
+      $hover-link-color: darken($link-color, $darken);
+      color: darken($hover-link-color, $darken);
+      background: -webkit-linear-gradient($base-body-color, $base-body-color), -webkit-linear-gradient($base-body-color, $base-body-color), -webkit-linear-gradient($hover-link-color, $hover-link-color);
+      @include transition(background-color .2s $ease-in-out-quad);
+    }
+
+    @if $type == on-hover {
+      $hover-link-color: darken($link-color, $darken);
+      color: darken($hover-link-color, $darken);
+      background: -webkit-linear-gradient($base-body-color, $base-body-color), -webkit-linear-gradient($base-body-color, $base-body-color), -webkit-linear-gradient($hover-link-color, $hover-link-color);
+      background-size: 0.08em 0.08em, 0.08em 0.08em, 0.08em 0.08em;
+      background-repeat: no-repeat, no-repeat, repeat-x;
+      text-shadow: 0.04em 0 $background, -0.04em 0 $background, 0 0.04em $background, 0 -0.06em $background, 0.08em 0 $background, -0.08em 0 $background, 0.08em 0 $background, -0.10em 0 $background, 0.12em 0 $background, -0.12em 0 $background, 0.14em 0 $background, -0.14em 0 $background;
+      background-position-y: 96%, 96%, 96%;
+      background-position-x: 0%, 100%, 0%;
+      @include transition(background-color .2s $ease-in-out-quad);
+    }
+
+  }
+}

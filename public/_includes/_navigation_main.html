@@ -1,4 +1,4 @@
-<header id="top" class="global-header">
+<!-- <header id="top" class="global-header">
   <hgroup role="site-name">
     <a href="{{ site.url }}">{{site.name}}</a>
   </hgroup>
@@ -7,6 +7,18 @@
       <li><span id="gridtoggle">Toggle Grid</span></li>
       {% for nav_link in site.data.nav_links %}
       <li><a href="{% if nav_link.external %}{{ nav_link.url }}{% else %}{{ site.url }}{{ nav_link.url }}{% endif %}" {% if nav_link.external %} data-no-instant target="_blank"{% endif %}>{{ nav_link.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>
+ -->
+
+<header id="top" role="main-header" am-Grid-Row="middle between">
+  <hgroup am-grid-col><a href="{{ site.url }}">{{ site.name }}</a></hgroup>
+  <nav am-grid-col>
+    <ul>
+      {% for nav_link in site.data.nav_links %}
+        <li><a href="{% if nav_link.external %}{{ nav_link.url }}{% else %}{{ site.url }}{{ nav_link.url }}{% endif %}" {% if nav_link.external %} data-no-instant target="_blank"{% endif %}>{{ nav_link.title }}</a></li>
       {% endfor %}
     </ul>
   </nav>

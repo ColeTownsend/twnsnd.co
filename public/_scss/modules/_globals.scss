@@ -1,10 +1,25 @@
-// Global demo styles
+// Global styles
 // ---------------------------------------
+html {
+  @include box-sizing(border-box);
+}
 
 body {
   background-color: $backgroundColour;
   color: $bodyColour;
   overflow-x: hidden;
+  width: 100%;
+}
+
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main.site-content {
+  @include flex(1);
+  -ms-flex-preferred-size: auto;
 }
 
 .section {
@@ -31,4 +46,18 @@ img {
     max-width: 100%;
     width: auto;
   }
+}
+
+[am-position~="right"] {
+  float: right;
+  right: 0;
+}
+
+[am-position~="left"] {
+  float: left;
+  left: 0;
+}
+
+[am-position~="absolute"] {
+  position: absolute;
 }

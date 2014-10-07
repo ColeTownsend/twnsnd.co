@@ -41,21 +41,7 @@ a {
 
   // Nice underlines for text links.
   p a, li a {
-    background-image: -webkit-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($linkColour,20%) 50%);
-    background-image: -moz-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($linkColour,20%) 50%);
-    background-image: -o-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($linkColour,20%) 50%);
-    background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,lighten($linkColour,20%) 50%);
-    background-position: 0 93%;
-    background-repeat: repeat-x;
-    background-size: 100% 0.15rem;
-    text-shadow: 0.1rem 0 $backgroundColour,0.15rem 0 $backgroundColour,-0.1rem 0 $backgroundColour,-0.15rem 0 $backgroundColour;
-
-    &:hover, &:active, &:focus {
-      background-image: -webkit-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($hoverColour,20%) 50%);
-      background-image: -moz-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($hoverColour,20%) 50%);
-      background-image: -o-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($hoverColour,20%) 50%);
-      background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,lighten($hoverColour,20%) 50%);
-    }
+    @include link-hover($linkColour, $backgroundColour, 10, underline);
   }
 
   // Paragraphs. OpenType ligatures and oldstyle figures enabled if available.
@@ -88,9 +74,14 @@ a {
     @include sassline($fontsize: alpha, $font: $headingtype, $lineheight: 3, $below: 1, $breakpoint: all);
   }
 
+
   // Heading level 2.
   h2, .beta {
     @include sassline(beta, $headingtype, 3, 1, all);
+    &[am-text~="hero"] {
+      font-weight: 400;
+      letter-spacing: .01em;
+    }
   }
 
   // Heading level 3.
@@ -276,5 +267,15 @@ a {
     -ms-font-feature-settings: 'onum' 1, 'kern' 1;
     -o-font-feature-settings: 'onum' 1, 'kern' 1;
     font-feature-settings: 'onum' 1, 'kern' 1;
+  }
+
+  [am-text~="center"] {
+    text-align: center;
+  }
+  [am-text~="right"] {
+    text-align: right;
+  }
+  [am-text~="opacity:25"] {
+    opacity: .25;
   }
 }

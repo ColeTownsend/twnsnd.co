@@ -1,0 +1,21 @@
+[am-button~="small"] {
+  line-height: 1.4rem;
+  height: 1.6rem;
+  padding: .2rem .4rem;
+  display: inline-block;
+  font-family: unquote(map-get($headingtype, font-family));
+  font-style: normal;
+  font-weight: map-get($headingtype, regular);
+  text-align: center;
+  @include fontsize(theta, all);
+  @include border-top-radius($base-border-radius);
+  @include border-bottom-radius($base-border-radius);
+}
+
+[am-button~="info"] {
+  color: $purple;
+  border: 1px solid $purple;
+  position: absolute;
+  left: -6rem;
+  top: 1.6rem;
+}

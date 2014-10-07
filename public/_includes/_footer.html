@@ -1,20 +1,20 @@
-<footer>
-  <article am-Grid-Row="gutters between">
+<footer class="typeset">
+  <article am-Grid-Row="gutters between baseline">
     <div am-grid-col="3">
       <p am-text="opacity:25">
         Great designers tend to be a great humans. They can empathize and can apply perspectives other than their own. They can accept criticism, be told that they are wrong, and stand up for what they think is right.
       </p>
     </div>
-    <div am->
-      <a am-Link="underline" href="#top">Back To Top</a> <br>
-      <span am-text="opacity:25"><br> © 2014 Cole Townsend</span>
+    <div am-grid-col="3">
+      <p am-text="center"><a href="#top">Back To Top</a></p>
+      <p am-text="opacity:25 center"> © 2014 Cole Townsend</p>
       </small>
     </div>
     <div am-grid-col="3">
       <p am-text="opacity:25">
-        Set in {{ site.font }}.
-        Built with Jekyll, SCSS, and HTML.
-        Served via Github Pages.
+        Set in {{ site.font }}. <br>
+        Built with Jekyll, SCSS, and HTML. <br>
+        Served via {{ site.host }}.
       </p>
     </div>
   </article>
