@@ -1,8 +1,7 @@
-{% if site.posts %}
-<section id="work" am-Block="2" class="typeset">
-  <article am-Grid-Row>
-    <ul>
-    {% for post in site.posts limit: 9 %}
+<section id="work" am-Block="work">
+  <article>
+    <ul am-neat="table">
+    {% for post in site.posts limit:9 %}
       {% if post.categories contains 'work' or post.categories contains 'journal' %}
         <!-- featured image, generally work -->
         {% if post.image.feature %}
@@ -10,25 +9,30 @@
             <span class="colorize" style="background:{% if post.accent_color %}{{ post.accent_color}}{% else %}#EFEFEF{% endif %};"></span>
             <span class="project" style="background-image: url({{ site.url }}/images/posts/{{ post.image.feature }});"></span>
             <a href="{{ site.url }}{{ post.url }}">
-              <span am-Text="info mono">{{ page.tags | array_to_sentence_string | strip_html }}</span>
-              <hr am-Divider="4">
-              <h1 {% if post.title-color %} style="color: {{ post.title-color }};"{% endif %}>{{ post.title }}</h1>
+              <div am-text="typeset" am-position="absolute bottom left">
+                <small am-Text="info mono">{{ post.tags | array_to_sentence_string }}</small>
+                <hr am-Divider="6">
+                <h1 {% if post.title-color %} style="color: {{ post.title-color }};"{% endif %}>{{ post.title }}</h1>
+              </div>
             </a>
-        </li>
-        <!-- no feature, almost always blog posts -->
+          </li>
         {% else %}
           <li class="work-grid" style="background:{% if post.accent_color %}{{ post.accent_color}}{% else %}#ffffff{% endif %};">
-            <a am-Link="blank" href="{{ site.url }}{{ post.url }}">
-              <hr am-Divider="4">
-              <h1 {% if post.title-color %} style="color: {{ post.title-color }};"{% endif %}>{{ post.title }}</h1>
+            <a am-link="blank" href="{{ site.url }}{{ post.url }}">
+              <div am-text="typeset" am-pad="2" am-position="absolute top left">
+                <hr am-divider="6">
+                <h1 {% if post.title-color %} style="color: {{ post.title-color }};"{% endif %}>{{ post.title }}</h1>
+                {% if post.category %}<span am-Text="info mono">{{ post.category }} &#8212;{% endif %}  {{ post.date | date: "%m %d %y" }}</span>
+                <p>
+                  {{ post.excerpt | truncatewords:36 | remove: '<p>' | remove: '</p>' | strip_html }}
+                </p>
+              </div>
             </a>
-            <span am-Text="info mono">{{ post.category }} &#8212; {{ post.date | date: "%m %d %y" }}</span>
-            <a am-link="target" href="{{ site.url }}{{ post.url }}"></a>
-          </li>
+<!--             <a am-position="absolute bottom right" am-link="target" href="{{ site.url }}{{ post.url }}">o</a>
+ -->          </li>
         {% endif %}
-      {% endif %} <!-- end if work loop -->
-    {% endfor %} <!-- end for post loop -->
+      {% endif %}
+    {% endfor %}
     </ul>
   </article>
 </section>
-{% endif %}

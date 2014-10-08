@@ -27,21 +27,26 @@ a {
   -o-transition: color .1s, background-color .1s;
   transition: color .1s, background-color .1s;
 
-  color: $linkColour;
+  // color: $linkColour;
   text-decoration: none;
 
-  &:hover, &:active, &:focus {
-    color: $hoverColour;
-    text-decoration: none;
-  }
+  // &:hover, &:active, &:focus {
+  //   color: $hoverColour;
+  //   text-decoration: none;
+  // }
 }
 
 // Styles for typeset text.
-.typeset {
+[am-text~="typeset"] {
 
   // Nice underlines for text links.
   p a, li a {
     @include link-hover($linkColour, $backgroundColour, 10, underline);
+  }
+  // links
+  [am-link="blank"] {
+    text-shadow: none;
+    background:none;
   }
 
   // Paragraphs. OpenType ligatures and oldstyle figures enabled if available.
@@ -78,15 +83,15 @@ a {
   // Heading level 2.
   h2, .beta {
     @include sassline(beta, $headingtype, 3, 1, all);
-    &[am-text~="hero"] {
-      font-weight: 400;
-      letter-spacing: .01em;
-    }
   }
 
   // Heading level 3.
   h3, .gamma {
     @include sassline(gamma, $headingtype, 3, 1, all);
+    &[am-text~="hero"] {
+      font-weight: 400;
+      letter-spacing: .01em;
+    }
   }
 
   // Heading level 4.
@@ -123,6 +128,13 @@ a {
     }
   }
 
+  [am-list~="unstyle"] {
+    list-style: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
   // Bold.
   b, strong, .bold {
     font-weight: map-get($bodytype, bold);
@@ -146,7 +158,7 @@ a {
     line-height: 1rem;
   }
 
-  .caption {
+  .caption, [am-text~="info"] {
     color: $captionColour;
 
     @include baseline(theta, $headingtype, 2, 2, all);
@@ -212,9 +224,24 @@ a {
     padding-top: 3rem;
   }
 
+  [am-divider="6"] {
+    background:none;
+    background-position: none;
+    background-repeat: none;
+    background: $white;
+    padding: 0;
+    margin: 1rem 0;
+    height: 5px;
+    width: 100%;
+  }
+
   // Code block.
   code, pre {
     background-color: $codeBackgroundColour;
+    font-family: unquote(map-get($monospacetype, font-family));
+  }
+
+  [am-text~="mono"] {
     font-family: unquote(map-get($monospacetype, font-family));
   }
 
@@ -268,14 +295,17 @@ a {
     -o-font-feature-settings: 'onum' 1, 'kern' 1;
     font-feature-settings: 'onum' 1, 'kern' 1;
   }
-
-  [am-text~="center"] {
-    text-align: center;
-  }
-  [am-text~="right"] {
-    text-align: right;
-  }
   [am-text~="opacity:25"] {
     opacity: .25;
   }
+  [am-text~="opacity:40"] {
+    opacity: .40;
+  }
+}
+
+[am-text~="center"] {
+    text-align: center;
+  }
+[am-text~="right"] {
+  text-align: right;
 }

@@ -1,7 +1,4 @@
 footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
   display: block;
   font-family: $base-font-family;
@@ -10,6 +7,7 @@ footer {
   height: $footer-height;
   background: $real-black;
   color: $white;
+  @include clearfix();
   a {
     color: $white;
     border-bottom: 1px solid transparentize($white, .4);

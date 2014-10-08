@@ -3,10 +3,9 @@
 footer {
   // sticky hax
   width: 100%;
-  height: 16rem;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  // position: absolute;
+  // bottom: 0;
+  // left: 0;
   // aesthetics
   $footerBG: $real-black;
   padding: 2rem;
@@ -18,7 +17,7 @@ footer {
    line-height: 1rem;
    color: white;
   }
-  &.typeset p a {
+  p > a.blank-link {
     @include link-hover($white, $real-black, 20, underline);
   }
 }

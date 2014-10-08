@@ -45,9 +45,9 @@
       @include transition(opacity .2s $ease-in-out-quad);
       cursor: pointer;
       // small
-      @include media($small) {
+      @include media($break-0) {
         opacity: 1;
-        left: 100%;
+        left: calc(100% - 2rem);
         top: 1.2em;
         line-height: 1.4em;
         padding: .4em .4em .4em .4em;

@@ -10,7 +10,7 @@
   @include fontsize(theta, all);
   @include border-top-radius($base-border-radius);
   @include border-bottom-radius($base-border-radius);
-  @include media($small) {
+  @include media($break-0) {
     padding: .2em .4em;
   }
 }
@@ -21,7 +21,7 @@
   position: absolute;
   left: -6rem;
   top: 1.6rem;
-  @include media($small) {
+  @include media($break-0) {
     left: 0;
     right: -6rem;
   }

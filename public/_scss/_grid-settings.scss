@@ -7,10 +7,16 @@ $grid-columns: 12;
 $max-width: em(960px, 20px);
 
 // Define your breakpoints
-$large: new-breakpoint(min-width 1600 12);
-$default: new-breakpoint(min-width 1024 12);
-$medium: new-breakpoint(max-width 800px 8);
-$small: new-breakpoint(max-width 640px 8);
+$break-4:   new-breakpoint(min-width 1600 12);
+$break-3:   new-breakpoint(min-width 1024 12);
+$break-2:   new-breakpoint(min-width 800 8);
+$break-1:   new-breakpoint(min-width 640 8);
+$break-0:   new-breakpoint(max-width 639 8);
+
+$visual-grid: false;
+$visual-grid-color: #9255D4;
+$visual-grid-index: front !global;
+$visual-grid-opacity: 0.4 !global;
 
 
 // .listing {
