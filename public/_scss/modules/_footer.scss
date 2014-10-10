@@ -8,9 +8,8 @@ footer {
   // left: 0;
   // aesthetics
   $footerBG: $real-black;
-  padding: 2rem;
+  padding: 2rem 0;
   background: $footerBG;
-
   // nexted styles
   [am-text] {
    @include fontsize(theta, all);

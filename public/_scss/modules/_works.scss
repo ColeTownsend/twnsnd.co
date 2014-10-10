@@ -7,43 +7,45 @@
     position: relative;
     background: #D9EDF3;
     // @include transition(all .2s $base-transition-timing);
-    min-height: 20rem;
-    &:nth-child(1) {
-      @include span-columns(7);
-      @include pad(0);
-    }
-    &:nth-child(2) {
-      @include span-columns(5);
-      @include omega();
-    }
-    &:nth-child(3) {
-      @include span-columns(5);
-      @include pad(0);
-    }
-    &:nth-child(4) {
-      @include span-columns(7);
-      @include omega();
-    }
-    &:nth-child(5) {
-      @include span-columns(12);
-      @include pad(0);
-    }
-    &:nth-child(6) {
-      @include span-columns(5);
-      @include pad(0);
-    }
-    &:nth-child(7) {
-      @include span-columns(7);
-      @include omega();
-    }
-    &:nth-child(8) {
-      @include span-columns(7);
-      @include pad(0);
-    }
-    &:nth-child(9) {
-      @include span-columns(5);
-      @include omega();
-    }
+    height: 50vh;
+    min-height: 16rem;
+    border: 2px solid black;
+    // &:nth-child(1) {
+    //   @include span-columns(7);
+    //   @include pad(0);
+    // }
+    // &:nth-child(2) {
+    //   @include span-columns(5);
+    //   @include omega();
+    // }
+    // &:nth-child(3) {
+    //   @include span-columns(5);
+    //   @include pad(0);
+    // }
+    // &:nth-child(4) {
+    //   @include span-columns(7);
+    //   @include omega();
+    // }
+    // &:nth-child(5) {
+    //   @include span-columns(12);
+    //   @include pad(0);
+    // }
+    // &:nth-child(6) {
+    //   @include span-columns(5);
+    //   @include pad(0);
+    // }
+    // &:nth-child(7) {
+    //   @include span-columns(7);
+    //   @include omega();
+    // }
+    // &:nth-child(8) {
+    //   @include span-columns(7);
+    //   @include pad(0);
+    // }
+    // &:nth-child(9) {
+    //   @include span-columns(5);
+    //   @include omega();
+    // }
     // Small
     @include media($break-0) {
       margin-bottom: 0;
@@ -60,23 +62,18 @@
     // @include media($break-2) {
     //   height: calc(680px/3);
     // }
-   display: flex !important;
-  }
-  [am-position~="absolute"] {
-    display: block;
-    width: 100%;
-    padding: 2rem;
-    background: none;
   }
   .work-grid > a {
-    position: absolute;
-    min-height: 100%;
-    height: auto;
-    width: 100%;
-    display: block;
-    flex-grow: 1;
+    -webkit-align-items:flex-end;
+    padding: 2rem !important;
+    div[am-text="typeset"] {
+      align-self: flex-end;
+    }
     hr {
       background: $black;
+      background-size: 100%;
+      margin-top: 0;
+      margin-bottom: 0;
     }
     [am-text~="info"], [am-text~="mono"], h1, p{
       color: $black;
@@ -84,6 +81,5 @@
   }
   p {
     @include fontsize(theta, all);
-    @include flex(1);
   }
 }

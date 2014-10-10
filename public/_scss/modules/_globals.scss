@@ -33,15 +33,6 @@ body {
   // Big Screens
   // Tablet
   margin: 0 auto;
-  @include media($break-0) {
-    padding: 0 0;
-  }
-  @include media($break-1) {
-    padding: 0 .5em;
-  }
-  @include media($break-2) {
-    padding: 0 0;
-  }
 }
 
 .full {

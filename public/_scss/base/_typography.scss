@@ -128,13 +128,6 @@ a {
     }
   }
 
-  [am-list~="unstyle"] {
-    list-style: none;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-
   // Bold.
   b, strong, .bold {
     font-weight: map-get($bodytype, bold);
@@ -308,4 +301,11 @@ a {
   }
 [am-text~="right"] {
   text-align: right;
+}
+
+[am-list~="unstyle"] {
+  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
