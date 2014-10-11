@@ -1,12 +1,12 @@
 <html lang="en">
   {% include _head.html %}
-  <body class="home site">
+  <body class="post site">
     {% include _navigation_main.html %}
     <section id="baseline">
       <div class="section typeset">
         <div class="column column--main column--right">
-          <hr am-divider="6" style="background:{{ post.title-color }}">
-          <h1 style="color:{{ post.title-color }}">{{ page.title }}</h1>
+          <hr style="background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%, {{ page.accent-color }} 50%)">
+          <h1 style="color:{{ page.accent-color }}">{{ page.title }}</h1>
           {{ content }}
       </div>
     </section>

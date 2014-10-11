@@ -51,14 +51,6 @@ body {
 
 .section {
   padding: 2rem 0;
-
-  @include breakpoint(break-1) {
-    padding: 3rem 0;
-  }
-
-  @include breakpoint(break-2) {
-    padding: 4rem 0;
-  }
 }
 
 img {

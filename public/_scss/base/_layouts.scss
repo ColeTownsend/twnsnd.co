@@ -8,16 +8,16 @@
   position: absolute;
 }
 [am-position~="left"] {
-  left: 0;
+  left: 0 !important;
 }
 [am-position~="right"] {
-  right: 0;
+  right: 0 !important;
 }
 [am-position~="top"] {
-  top: 0;
+  top: 0 !important;
 }
 [am-position~="bottom"] {
-  bottom: 0;
+  bottom: 0 !important;
 }
 
 // Neat Grid
@@ -36,15 +36,15 @@ section {
   @include breakpoint(break-3) {
     @include maxwidth(3);
   }
-
   @include breakpoint(break-4) {
     @include maxwidth(4);
   }
+  padding: 0;
 }
 
 // neat amcss grid
 
-[am-neat~="table"], .neat-table {
+[am-neat~="table"] {
   @include span-columns(12);
   @include row(table);
   margin-bottom: 0;

@@ -4,7 +4,7 @@ layout: portfolio
 title: PVCC
 date: "2014-05-29 15:10:14"
 category: work
-accent_color: "#CCBFB4"
+accent-color: "#CCBFB4"
 title-color: "#fffff"
 role: "Design, Development"
 tags: [Branding, Logo Design, Just For Fun]

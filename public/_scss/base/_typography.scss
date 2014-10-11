@@ -60,6 +60,12 @@ a {
     @include baseline($fontsize: zeta, $font: $bodytype, $lineheight: 2, $below: 2, $breakpoint: all);
   }
 
+  .column > p {
+    &:nth-of-type(2) {
+      @include sassline($fontsize: epsilon, $font: $bodytype, $lineheight: 2, $below: 2, $breakpoint: all);
+    }
+  }
+
   // Headings. OpenType ligatures, discretionary ligatures and lining figures enabled if available.
   h1, h2, h3, h4, h5, h6 {
     -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
@@ -147,6 +153,11 @@ a {
     @include fontsize(theta, all);
   }
 
+  [am-text~="info"] {
+    @include fontsize(theta, all);
+    letter-spacing: 0.04em;
+  }
+
   small {
     line-height: 1rem;
   }
@@ -205,23 +216,23 @@ a {
 
   // Horizontal rule.
   hr {
-    background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(0, 0, 0, 0)),to($captionColour));
-    background-image: -webkit-linear-gradient(top,rgba(0, 0, 0, 0) 50%,$captionColour 50%);
-    background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,$captionColour 50%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(0, 0, 0, 0)),to($black));
+    background-image: -webkit-linear-gradient(top,rgba(0, 0, 0, 0) 50%,$black 50%);
+    background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,$black 50%);
     background-position: 0 50%;
     background-repeat: repeat-x;
-    background-size: 100% 0.15rem;
+    background-size: 100% 0.8rem;
     border: 0;
     margin: 0;
-    padding-bottom: 3rem;
-    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
   }
 
   [am-divider="6"] {
     background:none;
     background-position: none;
     background-repeat: none;
-    background: $white;
+    background: $black;
     padding: 0;
     margin: 1rem 0;
     height: 5px;

@@ -8,28 +8,37 @@
           <li class="work-bounce" am-block="work-grid">
             <span class="colorize" style="background:{% if post.accent_color %}{{ post.accent_color}}{% else %}#EFEFEF{% endif %};"></span>
             <span class="project" style="background-image: url({{ site.url }}/images/posts/{{ post.image.feature }});"></span>
-            <a href="{{ site.url }}{{ post.url }}">
+            <a am-position="absolute left bottom" href="{{ site.url }}{{ post.url }}">
               <div class="typeset">
                 <small am-Text="info mono">{{ post.tags | array_to_sentence_string }}</small>
                 <hr am-Divider="6">
-                <h1 {% if post.title-color %} style="color: {{ post.title-color }};"{% endif %}>{{ post.title }}</h1>
+                <h2>{{ post.title }}</h2>
               </div>
             </a>
           </li>
-        {% else %}
+        {% elsif post.categories contains 'work' %}
           <li class="work-bounce" am-block="work-grid" style="background:{% if post.accent_color %}{{ post.accent_color}}{% else %}#ffffff{% endif %};">
-            <a am-link="blank" href="{{ site.url }}{{ post.url }}">
+            <a am-position="absolute left bottom" am-link="blank" href="{{ site.url }}{{ post.url }}">
+              <div class="typeset">
+                <small am-Text="info mono">{{ post.tags | array_to_sentence_string }}</small>
+                <hr am-Divider="6">
+                <h2>{{ post.title }}</h2>
+              </div>
+            </a>
+          </li>
+          {% else %}
+          <li class="work-bounce" am-block="work-grid" style="background:{% if post.accent_color %}{{ post.accent_color}}{% else %}#ffffff{% endif %};">
+            <a am-position="absolute top left" am-link="blank" href="{{ site.url }}{{ post.url }}">
               <div class="typeset">
                 <hr am-divider="6">
-                <h1 {% if post.title-color %} style="color: {{ post.title-color }};"{% endif %}>{{ post.title }}</h1>
-                {% if post.category %}<small am-Text="info mono">{{ post.category }} &#8212;{% endif %}  {{ post.date | date: "%m %d %y" }}</small>
+                <h2 {% if post.title-color %} style="color: {{ post.title-color }};"{% endif %}>{{ post.title }}</h2>
+                {% if post.category %}<small am-Text="info mono">{{ post.category | capitalize }} &#8212;{% endif %}  {{ post.date | date: "%m %d %y" }}</small>
                 <p>
                   {{ post.excerpt | truncatewords:36 | remove: '<p>' | remove: '</p>' | strip_html }}
                 </p>
               </div>
             </a>
-<!--             <a am-position="absolute bottom right" am-link="target" href="{{ site.url }}{{ post.url }}">o</a>
- -->          </li>
+          </li>
         {% endif %}
       {% endif %}
     {% endfor %}
