@@ -1,15 +1,15 @@
 <section id="work" am-Block="work">
   <article>
-    <ul am-list="unstyle" class="row start-xs between-xs">
+    <ul am-list="unstyle">
     {% for post in site.posts limit:9 %}
       {% if post.categories contains 'work' or post.categories contains 'journal' %}
         <!-- featured image, generally work -->
         {% if post.image.feature %}
-          <li class="work-grid col-xs-6">
+          <li class="work-bounce" am-block="work-grid">
             <span class="colorize" style="background:{% if post.accent_color %}{{ post.accent_color}}{% else %}#EFEFEF{% endif %};"></span>
             <span class="project" style="background-image: url({{ site.url }}/images/posts/{{ post.image.feature }});"></span>
-            <a href="{{ site.url }}{{ post.url }}" class="row bottom-xs">
-              <div am-text="typeset" class="col-xs">
+            <a href="{{ site.url }}{{ post.url }}">
+              <div class="typeset">
                 <small am-Text="info mono">{{ post.tags | array_to_sentence_string }}</small>
                 <hr am-Divider="6">
                 <h1 {% if post.title-color %} style="color: {{ post.title-color }};"{% endif %}>{{ post.title }}</h1>
@@ -17,9 +17,9 @@
             </a>
           </li>
         {% else %}
-          <li class="work-grid flex-container" style="background:{% if post.accent_color %}{{ post.accent_color}}{% else %}#ffffff{% endif %};">
-            <a am-link="blank" href="{{ site.url }}{{ post.url }}" class="row start-xs bottom-xs">
-              <div am-text="typeset" class="col-xs">
+          <li class="work-bounce" am-block="work-grid" style="background:{% if post.accent_color %}{{ post.accent_color}}{% else %}#ffffff{% endif %};">
+            <a am-link="blank" href="{{ site.url }}{{ post.url }}">
+              <div class="typeset">
                 <hr am-divider="6">
                 <h1 {% if post.title-color %} style="color: {{ post.title-color }};"{% endif %}>{{ post.title }}</h1>
                 {% if post.category %}<small am-Text="info mono">{{ post.category }} &#8212;{% endif %}  {{ post.date | date: "%m %d %y" }}</small>

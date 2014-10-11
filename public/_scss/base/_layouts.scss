@@ -2,13 +2,7 @@
 // ---------------------------------------
 
 
-// basically functions as a block wrapper. maybe for a page section, who knows?
-section {
-  padding: 2rem auto;
-  display: block;
-  @include clearfix();
-  position: relative;
-}
+// positioning
 
 [am-position~="absolute"] {
   position: absolute;
@@ -28,8 +22,16 @@ section {
 
 // Neat Grid
 
+// basically functions as a block wrapper. maybe for a page section, who knows?
+section {
+  padding: 2rem 0;
+  display: block;
+  @include clearfix();
+  position: relative;
+}
+
 // grid container
-[am-Grid-Row], article {
+[am-grid-row], article {
   @extend %container;
   @include breakpoint(break-3) {
     @include maxwidth(3);
@@ -40,7 +42,52 @@ section {
   }
 }
 
+// neat amcss grid
 
+[am-neat~="table"], .neat-table {
+  @include span-columns(12);
+  @include row(table);
+  margin-bottom: 0;
+  padding: 0;
+}
+
+// columns
+@for $i from 1 through $grid-columns {
+  [am-neat~="#{$i}"] {
+    @include span-columns($i);
+  }
+}
+
+// offsets
+@for $i from 1 through ($grid-columns - 1) {
+  [am-neat~="shift:#{$i}"] {
+    @include shift($i);
+  }
+}
+
+// add-ons
+[am-neat~="flex"] {
+  @include display(flex);
+  @include flex-wrap(wrap);
+  @include align-items(baseline);
+  @include justify-content(stretch);
+}
+
+[am-neat~="omega"] {
+  @include omega();
+}
+
+[am-neat~="clear"] {
+  @include clearfix();
+}
+
+[am-neat~="reset"] {
+  @include reset-all;
+}
+
+
+
+// Sassline
 
 // Container.
 .section {

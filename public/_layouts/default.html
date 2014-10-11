@@ -3,14 +3,12 @@
   <body class="home site">
     {% include _navigation_main.html %}
     <section id="baseline">
-      <div class="section" am-text="typeset">
-        <div class="section typeset">
-          <div class="column column--main column--right">
-            <hr am-divider="6" style="background:{{ post.title-color }}">
-            <h1 style="color:{{ post.title-color }}">{{ page.title }}</h1>
-            {{ content }}
-          </div>
-        </div>
+      <div class="section typeset">
+        <div class="column column--main column--right">
+          <hr am-divider="6" style="background:{{ post.title-color }}">
+          <h1 style="color:{{ post.title-color }}">{{ page.title }}</h1>
+          {{ content }}
+      </div>
     </section>
 
     {% include _footer.html %}

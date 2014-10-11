@@ -1,0 +1,10 @@
+<section id="work" am-Block="work">
+  <article>
+    <ul am-list="unstyle">
+      {% for post in site.posts limit:9 %}
+      <li am-block="work-grid">
+      </li>
+      {% endfor %}
+    </ul>
+  </article>
+</section>

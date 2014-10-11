@@ -1,11 +1,11 @@
-<section id="projects" am-Block="projects" am-text="typeset">
+<section id="projects" am-Block="projects" class="typeset">
   <article>
-    <h2>Currently Working On&#58;</h2>
+    <h2 am-neat="11 shift:1">Currently Working On&#58;</h2>
     <!-- Project Loop -->
-    <div am-block="project">
+    <div am-neat="10 shift:1" am-block="project">
     {% for project in site.data.projects %}
-      <h3 class="toggle-expand {{ project.class }}">{{ project.title }}</h3>
-      <p am-text="excerpt" class="hidden-info">
+      <h3 am-neat="12 clear" class="toggle-expand {{ project.class }}">{{ project.title }}</h3>
+      <p am-neat="10 clear" am-text="excerpt" class="hidden-info">
         {{ project.info }}
         <br>
         <a am-z="top" href="{{ project.url }}">Link</a>
