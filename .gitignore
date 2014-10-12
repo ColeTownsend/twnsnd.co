@@ -31,3 +31,6 @@ thumbs.db
 *.log
 node_modules/
 _process/**/*
+*.sublime-project
+
+*.sublime-workspace
