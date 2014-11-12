@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: portfolio
 
 title: A Quick Guide to Anchor CMS
 date: "2014-02-27 12:06:34"

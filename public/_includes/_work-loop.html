@@ -6,9 +6,9 @@
         <!-- featured image, generally work -->
         {% if post.image.feature %}
           <li class="work-bounce" am-block="work-grid">
-            <span class="colorize" style="background:{% if post.accent_color %}{{ post.accent_color}}{% else %}#EFEFEF{% endif %};"></span>
-            <span class="project" style="background-image: url({{ site.url }}/images/posts/{{ post.image.feature }});"></span>
-            <a am-position="absolute left bottom" href="{{ site.url }}{{ post.url }}">
+            <span class="bg--color" style="background:{% if post.accent-color %}{{ post.accent-color}}{% else %}#EFEFEF{% endif %};"></span>
+            <span class="bg--project" style="background-image: url({{ site.baseurl }}/images/posts/{{ post.image.feature }});"></span>
+            <a am-position="absolute left bottom" href="{{ site.baseurl }}{{ post.url }}">
               <div am-position="absolute left bottom" class="typeset">
                 <small am-Text="info mono">{{ post.tags | array_to_sentence_string }}</small>
                 <hr am-Divider="6">
@@ -17,8 +17,8 @@
             </a>
           </li>
         {% elsif post.categories contains 'work' %}
-          <li class="work-bounce" am-block="work-grid" style="background:{% if post.accent_color %}{{ post.accent_color}}{% else %}#ffffff{% endif %};">
-            <a am-position="absolute left bottom" am-link="blank" href="{{ site.url }}{{ post.url }}">
+          <li class="work-bounce" am-block="work-grid" style="background:{% if post.accent-color %}{{ post.accent-color}}{% else %}#ffffff{% endif %};">
+            <a am-position="absolute left bottom" am-link="blank" href="{{ site.baseurl }}{{ post.url }}">
               <div class="typeset">
                 <small am-Text="info mono">{{ post.tags | array_to_sentence_string }}</small>
                 <hr am-Divider="6">
@@ -27,8 +27,8 @@
             </a>
           </li>
           {% else %}
-          <li class="work-bounce" am-block="work-grid" style="background:{% if post.accent_color %}{{ post.accent_color}}{% else %}#ffffff{% endif %};">
-            <a am-position="absolute top left" am-link="blank" href="{{ site.url }}{{ post.url }}">
+          <li class="work-bounce" am-block="work-grid" style="background:{% if post.accent-color %}{{ post.accent-color}}{% else %}#ffffff{% endif %};">
+            <a am-position="absolute top left" am-link="blank" href="{{ site.baseurl }}{{ post.url }}">
               <div class="typeset">
                 <hr am-divider="6">
                 <h2 {% if post.title-color %} style="color: {{ post.title-color }};"{% endif %}>{{ post.title }}</h2>

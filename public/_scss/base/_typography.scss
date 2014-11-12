@@ -126,10 +126,10 @@ a {
       -o-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
       font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
 
-      margin-left: 2rem;
+      margin-left: 4rem;
 
       @include breakpoint(break-1) {
-        margin-left: 0;
+        margin-left: 2rem;
       }
     }
   }

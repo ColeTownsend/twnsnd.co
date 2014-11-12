@@ -4,7 +4,7 @@
   <body class="post">
     {% include _navigation_main.html %}
     {% if page.image.feature %}
-    <header class="full bg-img" style="background-image: url({{ site.url }}/images/posts/{{ page.image.feature }})">
+    <header class="full bg-img" style="background-image: url({{ site.baseurl }}/images/posts/{{ page.image.feature }})">
     </header>
     <div data-no-instant id="baseline">
       <div class="section typeset">
@@ -23,7 +23,9 @@
         <div class="column column--main column--right">
           <hr style="background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%, {{ page.accent-color }} 50%)">
           <h1 style="color:{{ page.accent-color }}">{{ page.title }}</h1>
+          <br>
           <p am-text="mono info" class="caption sidenote">{{ page.tags | array_to_sentence_string }}</p>
+
           {{ content }}
       </div>
     </section>

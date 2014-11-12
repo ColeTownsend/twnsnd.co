@@ -6,9 +6,14 @@
     min-height: 20rem;
     @include omega();
     margin-bottom: 20px;
-    @include transition(transform .2s $ease-in-out-quad);
-    // @include transition(box-shadow .2s $ease-in-out-quad);
 
+    // @include transition(box-shadow .2s $ease-in-out-quad);
+    &:hover {
+      .bg--project, .bg--color {
+        opacity: 1;
+        @include transition(opacity .2s $ease-in-out-quad);
+      }
+    }
     &:nth-child(1) {
       @include span-columns(7);
     }
@@ -81,5 +86,20 @@
   p {
     @include fontsize(zeta, all);
     margin-bottom: 0;
+  }
+  .bg--color {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    @include transition(opacity .2s $ease-in-out-quad);
+  }
+  .bg--project {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    opacity: 0;
+    @include transition(opacity .2s $ease-in-out-quad);
   }
 }
