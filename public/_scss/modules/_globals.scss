@@ -96,3 +96,21 @@ img {
 [am-z~="below"] {
   z-index: -1;
 }
+
+// positioning
+
+[am-position~="absolute"] {
+  position: absolute;
+}
+[am-position~="left"] {
+  left: 0;
+}
+[am-position~="right"] {
+  right: 0;
+}
+[am-position~="top"] {
+  top: 0;
+}
+[am-position~="bottom"] {
+  bottom: 0;
+}

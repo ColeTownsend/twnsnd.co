@@ -9,87 +9,43 @@
     @include transition(transform .2s $ease-in-out-quad);
     // @include transition(box-shadow .2s $ease-in-out-quad);
 
-    &:hover {
-      @include transform-origin(top);
-
-      @include transition(transform .1s $ease-in-out-quad);
-      // @include transition(box-shadow .2s $ease-in-out-quad);
-      -moz-box-shadow:    0px 1px 3px 0px rgba(0,0,0,0.10);
-      box-shadow:         0px 1px 3px 0px rgba(0,0,0,0.10);
-    }
     &:nth-child(1) {
       @include span-columns(7);
-      &:hover {
-        @include transform(translate(-10px, -10px));
-      }
     }
     &:nth-child(2) {
       @include span-columns(5);
       @include omega();
-      &:hover {
-        @include transform(translate(10px, -10px));
-      }
     }
     &:nth-child(3) {
       @include span-columns(5);
-      &:hover {
-        @include transform(translate(-10px, -10px));
-      }
     }
     &:nth-child(4) {
       @include span-columns(7);
       @include omega();
-      &:hover {
-        @include transform(translate(10px, -10px));
-      }
     }
     &:nth-child(5) {
       @include span-columns(12 of 12);
       @include omega();
       @include transition(margin .1s $ease-in-out-quad);
-      &:hover {
-        margin-top: 10px;
-        margin-bottom: 30px;
-        @include transform(translate(0, 0));
-        @include transition(margin .1s $ease-in-out-quad);
-      }
     }
     &:nth-child(6) {
       @include span-columns(5);
-      &:hover {
-        @include transform(translate(-10px, -10px));
-      }
     }
     &:nth-child(7) {
       @include span-columns(7);
       @include omega();
-      &:hover {
-        @include transform(translate(10px, -10px));
-      }
     }
     &:nth-child(8) {
       @include span-columns(7);
-      &:hover {
-        @include transform(translate(-10px, -10px));
-      }
     }
     &:nth-child(9) {
       @include span-columns(5);
       @include omega();
-      &:hover {
-        @include transform(translate(10px, -10px));
-      }
     }
     &:nth-child(10) {
       @include span-columns(12 of 12);
       @include omega();
       @include transition(margin .1s $ease-in-out-quad);
-      &:hover {
-        margin-top: 10px;
-        margin-bottom: 30px;
-        @include transform(translate(0, 0));
-        @include transition(margin .1s $ease-in-out-quad);
-      }
     }
     // Small
     @include media($break-0) {
@@ -101,8 +57,16 @@
     }
   }
   [am-block="work-grid"] > a {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     padding: 2rem;
-    div[am-text="typeset"] {
+    .typeset {
+      left: 2rem;
+      bottom: 2rem;
     }
     hr {
       background: $black;

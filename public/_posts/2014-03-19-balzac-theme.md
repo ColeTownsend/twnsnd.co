@@ -7,10 +7,12 @@ category: work
 accent_color: "#6d98cf"
 title-color: "#"
 role: "Designer and Developer"
-tags: [Web Design, CMS]
+tags: [Web Design, Front End Development]
 image:
   feature: balzac-code.png
 ---
+
+Balzac is a fluid & responsive theme. It's gloriously beautiful and suited to long form. Built on a SCSS foundation, it's organized and awesome.This is built on Semantic.gs grid framework which I edited a bit to make it fluid. 
 
 ## For Anchor
 Creating this theme in Anchor was relatively easy. I used similar php templates to those for my own website, and merely had to style the front end. I used Semantic.gs, a simple grid _include for Sass projects, and made it percentage based. The result was a fluid grid with min and max widths. I based the entire format on my favorite blogs and content heavy websites, and used the amazing [Calendas Plus](http://www.calendasplus.com/) font. 

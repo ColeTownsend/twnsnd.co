@@ -1,3 +1,3 @@
-# Charlie Deux
+# Twnsnd.co
 
-The new Charliegleason.com, which uses Harp, Gulp and BrowserSync.
+The latest and greatest featuring sassline.
